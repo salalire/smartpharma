@@ -1,4 +1,4 @@
- body{
+body {
   background-image: url("https://www.creativefabrica.com/wp-content/uploads/2020/02/07/Flying-realistic-Pill-Medicine-Health-a-Graphics-1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -9,44 +9,37 @@
   font-family: Georgia;
 }
 
+* {
+  font-size: 18px;
+}
+h2 {
+  font-size: 40px;
+  color: navy;
+}
 
-  *{
-    font-size: 18px;
-  }
-  h2{
-   font-size: 40px;
-   color:  navy;
-  }
-  
-  
-  #Welcome_text {
+#Welcome_text {
   font-size: 23px;
   color: #191970;
   color: black;
 }
 
-
 #fill_text {
   font-size: 20px;
-
 }
 
-
-.Owner_name{
+.Owner_name {
   margin-left: 350px;
   font-size: 20px;
 }
 
-
-.Address{
+.Address {
   margin-left: 350px;
   font-size: 20px;
 }
-
 
 label {
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   color: #333333;
   margin-bottom: 8px;
@@ -54,12 +47,11 @@ label {
   font-weight: 600;
 }
 
-
 input {
   width: 109%;
   padding: 10px 12px;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   border: 1px solid #ccc;
   border-radius: 40px;
   box-sizing: border-box;
@@ -69,12 +61,11 @@ input {
   background-color: #f9f9f9;
 }
 
-
 select {
   width: 48%;
   padding: 10px 12px;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -83,26 +74,23 @@ select {
   background-color: #f9f9f9;
 }
 
-
 input:focus {
   border-color: #lightblue;
   outline: none;
 }
 button {
-  background-color: blue ;
+  background-color: blue;
   width: 25%;
   border-radius: 30px;
   margin-left: 8px;
   color: white;
   margin-bottom: 8px;
-  font-family: 'open sans',Sans-Serif;
+  font-family: "open sans", Sans-Serif;
   cursor: pointer;
   border: none;
   box-sizing: border-box;
-  
 }
 
 button:hover {
   background-color: #0056b3;
-  
 }
