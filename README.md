@@ -1,4 +1,4 @@
-# **SMARTPHARMA** – Online Medicine Store 
+# **SMARTPHARMA** – Online Medicine shop
 
 **Developed By:**
 - **Samuel Lire**
@@ -6,7 +6,7 @@
 - **Rahmet Abdela**
 - **Sara Redwan**
 - **Paulos Asmelash**
-#  SmartPharma – Online Medicine Store 💊
+#  SmartPharma – Online Medicine Shop 💊
 
 <p align="center">
   <marquee behavior="scroll" direction="left" scrollamount="10">
