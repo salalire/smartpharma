@@ -49,18 +49,38 @@
 ## 📂 Project Structure
 
 ```
-smartpharma/
+SmartPharma/
 │
-├─ index.html # Homepage
-├─ product.html # Product listings
-├─ cart.html # Shopping cart (demo)
-├─ css/
-│ └─ style.css # Stylesheets
-├─ js/
-│ └─ script.js # Client-side scripts
-└─ assets/
-├─ images/ # Product & banner images
-└─ icons/ # UI icons
+├─ structure-markup/
+│   ├─ index.html
+│   ├─ about.html
+│   ├─ page.html
+│   └─ ... (other HTML pages)
+│
+├─ assets/
+│   ├─ css/
+│   │   └─ style.css
+│   │   └─ ... (other CSS files)
+│   ├─ js/
+│   │   └─ script.js
+│   │   └─ ... (other JS files)
+│
+├─ media/
+│   └─ images/
+│       ├
+│       └─ ... (other images)
+│
+├─ icons/
+│   └─ ... (icon files)
+│
+├─ markup-sources/
+│   ├─ source1/
+│   └─ source2/
+│
+└─ docs/
+    ├─ project-synopsis.pdf
+    ├─ project-proposal.pdf
+    └─ ... (other documentation)
 
 ```
 ---
