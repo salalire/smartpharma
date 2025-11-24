@@ -1,5 +1,5 @@
 
-# **SMARTPHARMA**
+# **SMARTPHARMA** – Online Medicine Store 
 
 **Developed By:**
 - **Samuel Lire**
