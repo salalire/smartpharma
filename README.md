@@ -54,8 +54,9 @@ SmartPharma/
 ├─ structure-markup/
 │   ├─ index.html
 │   ├─ about.html
-│   ├─ page.html
-│   └─ ... (other HTML pages)
+│   ├─ blog.html
+│   └─ login.html
+|    
 │
 ├─ assets/
 │   ├─ css/
