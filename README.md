@@ -55,8 +55,11 @@ SmartPharma/
 │   ├─ index.html
 │   ├─ about.html
 │   ├─ blog.html
-│   └─ login.html
-|    
+│   ├─ medication.html
+|    ├─ registration.html
+|    ├─ agreement.html
+|    ├─ pharmasyregistration.html
+|    └─ login.html    
 │
 ├─ assets/
 │   ├─ css/
