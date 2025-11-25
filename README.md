@@ -51,6 +51,9 @@
 SmartPharma/
 │
 ├─ structure-markup/
+|    ├─ Component/
+|         ├─ footer.html
+|         ├─ navbar.html
 │   ├─ index.html
 │   ├─ about.html
 │   ├─ page.html
