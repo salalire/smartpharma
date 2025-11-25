@@ -52,6 +52,9 @@
 SmartPharma/
 │
 ├─ structure-markup/
+|   ├─ Component/
+|       ├─ footer.html
+        ├─ nvar.html   
 │   ├─ index.html
 │   ├─ about.html
 │   ├─ blog.html
