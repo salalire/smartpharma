@@ -1,0 +1,169 @@
+*{
+  margin: 0;
+  font-family: "open sans" Sans-Serif;
+  padding: 0;
+  box-sizing:border-box;
+  
+}
+section {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/022/006/829/large_2x/pharmacology-and-pharmaceuticals-healthcare-background-with-copy-space-generative-ai-illustration-photo.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  animation: animateBg 5s linear infinite;
+}
+
+
+@keyframes animateBg {
+  100% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.login_box {
+  animation: animateBg 5s linear infinite;
+  background: linear-gradient(3600deg, #00f, #0ff);
+  background-size: 200% 100%;
+}
+
+.login_box{
+  position: relative;
+  width: 450px;
+  height: 500px;
+  border-radius: 23px;
+  border: 4px solid rgba(255,255,255,.5);
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ backdrop-filter:blur(15px);
+}
+
+
+h1{
+  
+  font-size: 25px;
+  color: #000;
+  text-align: center;
+}
+
+.input_box{
+  position: relative;
+  width: 310px;
+  margin: 30px 0;
+  border-bottom: 2px solid #fff;
+ 
+}
+
+.input_box label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+transform: translateY(-50%);
+font-size: 1em;
+color: #000;
+pointer-events: none;
+transition: .5s;
+padding: 0 25px 0 5px;
+
+}
+
+.input_box:focus-within label {
+  top: -5px;
+  
+}
+
+
+
+
+
+.input_box input{
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #000;
+  font-size: 1em;
+}
+
+.input_box .icon{
+  position: absolute;
+  right: 8px;
+  font-size: 1.5em;
+  color: #000;
+  line-height: 57px;
+  
+}
+
+
+.remember{
+  margin: -15px 0 15px;
+  color: #000;
+  font-size: 1em;
+  display: flex;
+ justify-content: space-between;
+  
+}
+
+
+.remember label input{
+  margin-right: 3px;
+}
+.remember a{
+  color: #000;
+  text-decoration: none;
+}
+
+.remember a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
+
+button{
+  color: #000;
+  width: 350px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover{
+  color: blue;
+}
+
+.registor_link{
+  margin-top: 15px;
+  margin-left: 13px;
+  color: #000;
+  font-size: 1.2em;
+  justify-content: space-between;
+  
+}
+
+.registor_link a{
+  color: #000;
+  text-decoration: none;
+  
+}
+
+.registor_link a:hover{
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -1,0 +1,150 @@
+
+section {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/022/006/829/large_2x/pharmacology-and-pharmaceuticals-healthcare-background-with-copy-space-generative-ai-illustration-photo.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  animation: animateBg 5s linear infinite;
+}
+
+
+
+
+.registration_box {
+  animation: animateBg 5s linear infinite;
+  background: linear-gradient(3600deg, #00f, #0ff);
+  background-size: 200% 100%;
+}
+
+.registration_box{
+  position: relative;
+  padding-top: 65px;
+  width: 1200px;
+  height: 1200px;
+  border-radius: 23px;
+  border: 8px solid rgba(255,255,255,.5);
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ backdrop-filter:blur(15px);
+}
+
+
+.registration_box{
+  position: relative;
+  width: 810px;
+  margin: 60px 0;
+  border-bottom: 2px solid #fff;
+ 
+}
+
+
+@keyframes animateBg {
+  100% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+
+.input_box{
+  position: relative;
+  width: 310px;
+  margin: 30px 0;
+  border-bottom: 2px solid #fff;
+ 
+}
+
+.input_box label{
+  position: absolute;
+  top: 50%;
+  left: 40px;
+transform: translateY(-50%);
+font-size: 1.2em;
+color: #000;
+right: 8px;
+pointer-events: none;
+transition: .5s;
+padding: 0 25px 0 5px;
+
+}
+
+
+.input_box:focus-within label {
+  top: -5px;
+  
+}
+
+.input_box:focus-within .icon {
+  top: -30px;
+  
+}
+
+.input_box input{
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #000;
+  font-size: 1em;
+}
+
+
+.input_box .icon{
+  position: absolute;
+  font-size: 1.5em;
+  color: #000;
+  line-height: 57px;
+  
+}
+
+.reseat {
+    position: relative;
+    left:2px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 100px;
+    width: 180px;
+    border-radius: 12px;
+    font-display: flex;
+    padding: 12px 20px;
+    background-color: skyblue;
+    outline: none;
+} 
+
+.registor{
+    position: relative;
+    left:1px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 100px;
+    width: 180px;
+    border-radius: 12px;
+    font-display: flex;
+    padding: 12px 20px;
+    background-color: skyblue;
+    outline: none;
+}
+.registor:hover{
+    color: #000;
+    font-weight: bold;
+    background-color: slateblue;
+    cursor: pointer;
+}
+
+.reseat:hover{
+    color: #000;
+    font-weight: bold;
+    background-color: slateblue;
+    cursor: pointer;
+}
