@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration page!</title>
-    <link rel="stylesheet" href="styles.css" >
+    <link rel="stylesheet" href="../CSS/userregistration.css" >
     <script src="https://kit.fontawesome.com/7f56dcb44b.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -17,17 +17,13 @@
 <form action="Smartpharma.php" method="post" onsubmit="return validation()">
   
  
-  <small>Please enter a valid email address. This will be used for account verification and communication.</small>
-
-
   <div class="input_box">
     <span class="icon"><i class="fa-regular fa-envelope"></i></span>
   <label for="useremail">Email:</label>
   <input type="email" name="useremail" id="useremail" required>
   </div>
   
-  <small>Optional: Include your phone number for SMS alerts or account recovery.</small>
-
+  
   <div class="input_box">
     <span class="icon">
       <i class="fa-solid fa-square-phone"></i>
@@ -37,8 +33,6 @@
   </div>
   
   
-  <small>Choose a unique username. It must be 4–15 characters and can include letters and numbers.</small>
-
   <div class="input_box">
     <span class="icon">
       <i class="fa-solid fa-circle-user"></i>
@@ -47,7 +41,6 @@
     <input type="text" id="username" name="username" minlength="4" maxlength="15">
   </div>
   
-  <small>Create a strong password with at least 8 characters, including a number and a special symbol.</small>
 
   <div class="input_box">
     <span class="icon">
@@ -59,8 +52,6 @@
   
   
   <p id="Warning_message" style="color:red"></p>
-  
-  <small>Re-enter your password to confirm. It must match the password above.</small>
 
   <div class="input_box">
     <span class="icon">
@@ -72,18 +63,14 @@
   
   
   <p id="Error_message" style="color:red"></p>
-  <small>Click to clear all fields and start over.</small>
+  
 
   <div class="reseat">
-    <button type="reset">Reset</button>
+    <input type="reset" value="Cancel">
   </div>
  
- 
- <small>Click to submit your registration and create your Smartpharma account.</small>
-
- 
   <div class="registor">
-    <button type="submit">Registor</button>
+    <input type="submit" value="Registor">
   </div>
   
   
