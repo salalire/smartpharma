@@ -1,150 +1,127 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
 section {
   display: flex;
+  flex-direction: column;
   align-items: center; 
   justify-content: center;
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
   background-image: url('https://static.vecteezy.com/system/resources/previews/022/006/829/large_2x/pharmacology-and-pharmaceuticals-healthcare-background-with-copy-space-generative-ai-illustration-photo.jpeg');
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: scroll;
   background-size: cover;
-  animation: animateBg 5s linear infinite;
 }
 
 
+.title {
+  color: #000;
+  margin-bottom: 20px;
+}
 
 
 .registration_box {
-  animation: animateBg 5s linear infinite;
-  background: linear-gradient(3600deg, #00f, #0ff);
-  background-size: 200% 100%;
+  width: 90%;
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 20px;
+  border: 2px solid rgba(255,255,255,.4);
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.75);
 }
 
-.registration_box{
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+
+.input_box {
   position: relative;
-  padding-top: 65px;
-  width: 1200px;
-  height: 1200px;
-  border-radius: 23px;
-  border: 8px solid rgba(255,255,255,.5);
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- backdrop-filter:blur(15px);
+  border-bottom: 2px solid #000;
 }
 
 
-.registration_box{
-  position: relative;
-  width: 810px;
-  margin: 60px 0;
-  border-bottom: 2px solid #fff;
- 
-}
-
-
-@keyframes animateBg {
-  100% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-}
-
-
-.input_box{
-  position: relative;
-  width: 310px;
-  margin: 30px 0;
-  border-bottom: 2px solid #fff;
- 
-}
-
-.input_box label{
+.input_box label {
   position: absolute;
   top: 50%;
-  left: 40px;
-transform: translateY(-50%);
-font-size: 1.2em;
-color: #000;
-right: 8px;
-pointer-events: none;
-transition: .5s;
-padding: 0 25px 0 5px;
+  left: 35px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #000;
+  pointer-events: none;
+  transition: 0.4s ease;
+}
 
+
+.input_box .icon {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3em;
+  color: #000;
+  transition: 0.4s ease;
+}
+
+
+.input_box input {
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding-left: 35px;
 }
 
 
 .input_box:focus-within label {
   top: -5px;
-  
+  font-size: 0.85em;
 }
 
 .input_box:focus-within .icon {
-  top: -30px;
-  
+  top: -10px;
+  font-size: 1.2em;
 }
 
-.input_box input{
-  width: 100%;
-  height: 50px;
-  background: transparent;
+
+.button-group {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+
+.reseat,
+.registor {
+  width: 160px;
+  padding: 12px;
+  border-radius: 12px;
   border: none;
-  outline: none;
-  color: #000;
   font-size: 1em;
+  cursor: pointer;
+  background-color: skyblue;
 }
 
-
-.input_box .icon{
-  position: absolute;
-  font-size: 1.5em;
+.reseat:hover,
+.registor:hover {
+  background-color: slateblue;
+  font-weight: bold;
   color: #000;
-  line-height: 57px;
-  
 }
 
-.reseat {
-    position: relative;
-    left:2px;
-    text-align: center;
-    display: inline-block;
-    margin-right: 100px;
-    width: 180px;
-    border-radius: 12px;
-    font-display: flex;
-    padding: 12px 20px;
-    background-color: skyblue;
-    outline: none;
-} 
 
-.registor{
-    position: relative;
-    left:1px;
-    text-align: center;
-    display: inline-block;
-    margin-left: 100px;
-    width: 180px;
-    border-radius: 12px;
-    font-display: flex;
-    padding: 12px 20px;
-    background-color: skyblue;
-    outline: none;
-}
-.registor:hover{
-    color: #000;
-    font-weight: bold;
-    background-color: slateblue;
-    cursor: pointer;
-}
-
-.reseat:hover{
-    color: #000;
-    font-weight: bold;
-    background-color: slateblue;
-    cursor: pointer;
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
