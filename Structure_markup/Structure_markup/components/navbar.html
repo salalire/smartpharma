@@ -1,16 +1,25 @@
-<!-- components/navbar.html -->
 <nav class="navbar" aria-label="Main Navigation">
   <div class="nav-brand">
     <a href="index.html">SmartPharma</a>
   </div>
-
-  <!-- Navigation links -->
   <ul class="nav-menu">
     <li><a href="home.html">Home</a></li>
     <li><a href="medications.html">Medications</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="pharmacyregistration.html">Pharmacy Registration</a></li>
-    <li><a href="login.html">Login</a></li>
-    <li><a href="registration.html">Sign Up</a></li>
+    <li class="dropdown">
+      <a href="#" id="login-link">Login</a>
+      <ul class="dropdown-menu" id="login-dropdown">
+        <li><a href="#" data-target="login.html">User Login</a></li>
+        <li><a href="#" data-target="pharmacy-login.html">Pharmacy Owner Login</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" id="signup-link">Sign Up</a>
+      <ul class="dropdown-menu" id="signup-dropdown">
+        <li><a href="#" data-target="registration.html">User Sign Up</a></li>
+        <li><a href="#" data-target="pharmacyregistration.html">Pharmacy Owner Sign Up</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
