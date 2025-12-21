@@ -1,63 +1,112 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartpharma Online</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediCare Online</title>
 
-   
-    <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="v4style.css">
 </head>
-
 <body>
 
-<header>
-    <h1>Smartpharma Online</h1>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">MediCare <span>Online</span></div>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Medicines</a>
-        <a href="#">Health Care</a>
-        <a href="#">Contact</a>
+      <a href="#">Home</a>
+      <a href="#">Health Care</a>
+      <a href="#">Contact</a>
+      <button class="btn">Sign In</button>
     </nav>
-</header>
+  </header>
 
-<section class="hero">
-    <h2>Your Health, Our Priority</h2>
-    <p>Quality medicines delivered to your doorstep</p>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Your Health, Elevated</h1>
 
     <div class="search-box">
-        <input type="text" placeholder="Search for medicines...">
+      <input type="text" placeholder="Search">
+      <button><i class="fas fa-search"></i></button>
     </div>
-</section>
 
-<section class="features">
-    <div class="feature">
-        <div class="feature-title">✔ Quality Assured</div>
-        <p>Products from licensed manufacturers.</p>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-prescription"></i>
+        <p>Prescription</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-pills"></i>
+        <p>OTC Medicines</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-heartbeat"></i>
+        <p>Health Care</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-baby"></i>
+        <p>Baby Care</p>
+      </div>
     </div>
-    <div class="feature">
-        <div class="feature-title">⚡ Fast Delivery</div>
-        <p>Same-day delivery available.</p>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-us">
+    <h2>Why You Should Choose Us</h2>
+
+    <div class="why-cards">
+      <div class="why-card">
+        <i class="fas fa-user-md"></i>
+        <h3>Trusted Professionals</h3>
+        <p>We connect you with certified healthcare professionals you can trust.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-clock"></i>
+        <h3>24/7 Availability</h3>
+        <p>Access medicines and healthcare services anytime, anywhere.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Secure & Reliable</h3>
+        <p>Your data and transactions are protected with top-level security.</p>
+      </div>
     </div>
-    <div class="feature">
-        <div class="feature-title">🔒 Secure & Safe</div>
-        <p>Your health info is protected.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#">About Us</a>
+        <a href="#">FAQ</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+
+      <div>
+        <h4>Contact Info</h4>
+        <p>Email: support@medicare.com</p>
+        <p>Phone: +1-800-MEDICARE</p>
+      </div>
+
+      <div>
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
     </div>
-</section>
 
-<section class="categories">
-    <h2>Shop by Category</h2>
-
-    <div class="category-grid">
-        <div class="category-card">Prescription</div>
-         <div class="category-card">OTC Medicines</div>
-    <div class="category-card">Health Care</div>
-        <div class="category-card">Baby Care</div>
-    </div>
-</section>
-
-
+    <p class="copyright">
+      © 2024 MediCare Online. All rights reserved.
+    </p>
+  </footer>
 
 </body>
 </html>
