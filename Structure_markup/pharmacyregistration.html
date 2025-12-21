@@ -1,136 +1,150 @@
 <!DOCTYPE html>
-    <html lang="en">
-      <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartpharma Online</title>
-    <link rel="stylesheet" href="../CSS/pharmacyregistration.css" >
-  </head>
-  <body>
-    <h2>Welcome to SmartPharma Registration</h2>
-    <p id="Welcome_text">Register now to bring your pharmacy into the digital age. SmartPharma empowers you to showcase products, manage inventory, and reach more customers through a user-friendly online platform. Join today and transform your local pharmacy into a smart, accessible healthcare hub.</p>
-<p id="fill_text">Please fill out the form below to register your pharmacy. All fields marked with * are required.</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartPharma Registration</title>
+  <link rel="stylesheet" href="registration.css">
+<body>
 
-    <form action="smartpharmapage.php" method="post" onsubmit="return submitcase()">
-      
-      
-      <p><span style="color:red">*</span>Enter the official name of your pharmacy as registered with the authorities.</p>
-      <div>
-        <label for="pharmacy_name">
-          pharmacy_name
-        </label>
-        <input type="text" id="pharmacy_name" name="pharmacy_name" required="" placeholder="Lottus_pharmacy">
-      </div>
-      
-      
-      <p><span style="color:red">* </span>Provide the full name of the pharmacy owner. This helps us verify ownership and contact the right person.</p>
-      <label class="Owner_name">Owner_name</label>
-      <div>
-        <label for="first_name">
-          First_name:   
-        </label>
-        <input type="text" id="first_name" name="first_name" placeholder="paulos" required="">
-           </div>
-           
-           
-        <div>
-        <label for="Middle_name">
-          Middle_name:   
-        </label>
-        <input type="text" id="Middle_name" name="Middle_name" placeholder="kebede" required="">
-        </div>
-        
-        
-        <div>
-        <label for="Last_name">
-          Last_name:   
-        </label>
-        <input type="text" id="Last_name" name="Last_name" placeholder="asmamew" required="">
-         </div>
-         
-          
-          <p><span style="color:red">*</span>Enter your 10-digit Tax Identification Number. This is required for regulatory compliance.</p>
-        <div>
-         <label for="Tin_number">Tin_number:</label> 
-         <input type="number" id="Tin_number" placeholder="0056784312" required="" >
-        </div>
-       
-       
-       <p><span style="color:red">*</span>Include a valid phone number where we can reach you for updates or verification. Use international format (e.g., +251...).</p>
-       <div>
-         <label for="tel_number">Tel_number:</label>
-         <input type="tel" id="tel_number" name="tel_number" placeholder="+251965453290" required="">
-       </div>
-       
-       
-       <p><span style="color:red">*</span>Provide a working email address. This will be used for account notifications and password recovery.</p>
-       <div>
-         <label for="Email_address">Email_address:</label>
-         <input type="email" id="Email_address" name="Email_address" placeholder="dsawer@gmail.com" >
-       </div> 
-       
-      
-      <p>Fill in your pharmacy's location details. Accurate address information helps us serve you better.</p>
-       <div>
-         <label class="Address">Address:</label>
-         </div>
-         
-         
-         <div>
-         <label for="region">Region: </label>
-         <select id="region">
-           <option>Addis Ababa</option>
-           <option>Oromia Region</option>
-           <option>Amahara Region</option>
-           <option>Tigray Region</option>
-         </select>
-         <label for="sub_city">sub_city: </label>
-         <input type="text" id="sub_city" name="sub_city" placeholder="nifassilk" required="">
-         <label for="woreda">woreda: </label>
-         <input type="text" id="woreda" name="woreda" placeholder="12" required="">
-       </div>  
-       
-      
-      <p><span style="color:red">*</span>Create a secure password with at least 8 characters. Use a mix of letters, numbers, and symbols</p>
-      <div>
-        <label for="password">password</label>
-        <input type="password" id="password" name="password" placeholder="Sajkutee@123" required="" minlength="8">  
-      </div> 
-      
-      
-      <p><span style="color:red">*</span>Re-enter your password to confirm. Both entries must match to proceed.</p>
-      <div>
-        <label for="confirm_password">confirm_password</label>
-        <input type="password" id="confirm_password" name="confirm_password"  required="" minlength="8">
-      </div>
-      
-      <div>
-        <p><span style="color:red">*</span>Upload your licence image </p>
-        <label for="image"></label>
-        <input type="file" id="image" name="image" required="" accept="image/*" multiple="">
-      </div>
-      
-      
-      <p>Clears all fields. Use this if you want to start over.</p>
-      <div>
-        <button type="reset">Reset:</button>
-      </div>
-      
-      
-      <p>Submits your registration. Make sure all fields are filled correctly before clicking.</p>
-      <div>
-        <button type="submit">Registor:</button>
-      </div>
-      <p id="output_message" style="color:red"></p>
-      <p id="Error_message" style="color:red"></p>
-    
-    
-    <label for="service-agrement">
-    <input type="checkbox" id="service-agrement" name="service-agrement">
-  I agree to the <a href="Service_terms.html" target="_blank">Terms of Service</a>
-  </label>
-  </form> 
+  <div class="form-container">
+    <h2>SmartPharma Pharmacy Registration</h2>
+    <p id="Welcome_text">Register your pharmacy to access SmartPharma services.</p>
+    <p id="fill_text">All fields marked with * are required.</p>
 
-    
-  </body>
+    <form action="smartpharmapage.php" method="post">
+
+      <div class="section-title">Pharmacy Information</div>
+      <div class="form-grid">
+        <div>
+          <label>* Pharmacy Name </label>
+          <input type="text" name="pharmacy_name" required>
+        </div>
+      </div>
+
+      <div class="section-title">Owner Information</div>
+      <div class="form-grid">
+        <div>
+          <label>* First Name </label>
+          <input type="text" name="first_name" required>
+        </div>
+        <div>
+          <label>* Middle Name</label>
+          <input type="text" name="Middle_name" required>
+        </div>
+        <div>
+          <label>* Last Name </label>
+          <input type="text" name="Last_name" required>
+        </div>
+        <div>
+          <label>* TIN Number </label>
+          <input type="number" name="Tin_number" required>
+        </div>
+        <div>
+          <label>Phone Number </label>
+          <input type="tel" name="tel_number" >
+        </div>
+        <div>
+          <label>* Email Address </label>
+          <input type="email" name="Email_address" required>
+        </div>
+      </div>
+
+      <div class="section-title">Address</div>
+      <div class="form-grid">
+        <div>
+          <label>* Region </label>
+          <select id="region" name="region" required>
+            <option value="">Select Region</option>
+            <option value="Addis Ababa">Addis Ababa</option>
+            <option>Afar</option>
+            <option>Amhara</option>
+            <option>Benishangul-Gumuz</option>
+            <option>Dire Dawa</option>
+            <option>Gambela</option>
+            <option>Harari</option>
+            <option>Oromia</option>
+            <option>Sidama</option>
+            <option>Somali</option>
+            <option>South West Ethiopia</option>
+            <option>Southern Nations, Nationalities and Peoples</option>
+            <option>Tigray</option>
+          </select>
+        </div>
+
+        <div id="addis-subcity" class="hidden">
+          <label>Sub City *</label>
+          <select name="sub_city">
+            <option value="">Select Sub City</option>
+            <option>Addis Ketema</option>
+            <option>Akaki Kality</option>
+            <option>Arada</option>
+            <option>Bole</option>
+            <option>Gullele</option>
+            <option>Kirkos</option>
+            <option>Kolfe Keranio</option>
+            <option>Lideta</option>
+            <option>Nifas Silk-Lafto</option>
+            <option>Yeka</option>
+          </select>
+        </div>
+
+        <div id="other-city">
+          <label>* City / Town </label>
+          <input type="text" name="other_city">
+        </div>
+
+        <div>
+          <label>Woreda </label>
+          <input type="text" name="woreda" >
+        </div>
+      </div>
+
+      <div class="section-title">Security</div>
+      <div class="form-grid">
+        <div>
+          <label>* Password </label>
+          <input type="password" name="password" minlength="8" required>
+        </div>
+        <div>
+          <label>* Confirm Password </label>
+          <input type="password" name="confirm_password" minlength="8" required>
+        </div>
+      </div>
+
+      <div class="section-title">* License</div>
+      <input type="file" name="image" accept="image/*" required>
+
+      <div class="checkbox-area">
+        <label>
+          <input type="checkbox" name="service-agrement" required>
+          I agree to the <a href="Service_terms.html" target="_blank">* Terms of Service</a>
+        </label>
+      </div>
+
+      <div class="button-group">
+        <button type="reset">Reset</button>
+        <button type="submit">Register</button>
+      </div>
+
+    </form>
+  </div>
+
+<script>
+  const regionSelect = document.getElementById("region");
+  const addisSubcity = document.getElementById("addis-subcity");
+  const otherCity = document.getElementById("other-city");
+
+  regionSelect.addEventListener("change", () => {
+    if (regionSelect.value === "Addis Ababa") {
+      addisSubcity.classList.remove("hidden");
+      otherCity.classList.add("hidden");
+    } else {
+      addisSubcity.classList.add("hidden");
+      otherCity.classList.remove("hidden");
+    }
+  });
+</script>
+
+</body>
 </html>
