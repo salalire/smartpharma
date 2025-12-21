@@ -1,82 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration page!</title>
-    <link rel="stylesheet" href="../CSS/userregistration.css" >
-    <script src="https://kit.fontawesome.com/7f56dcb44b.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <section>
-      
-      
-      <h1 class="title">Welcome To The Smartpharma  User Registration ! </h1>
-      
-       <div class="registration_box">
-<form action="Smartpharma.php" method="post" onsubmit="return validation()">
-  
- 
-  <div class="input_box">
-    <span class="icon"><i class="fa-regular fa-envelope"></i></span>
-  <label for="useremail">Email:</label>
-  <input type="email" name="useremail" id="useremail" required>
-  </div>
-  
-  
-  <div class="input_box">
-    <span class="icon">
-      <i class="fa-solid fa-square-phone"></i>
-    </span>
-    <label for="phone">Phone:</label>
-    <input type="tel" name="phone" id="phone" >
-  </div>
-  
-  
-  <div class="input_box">
-    <span class="icon">
-      <i class="fa-solid fa-circle-user"></i>
-    </span>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" minlength="4" maxlength="15">
-  </div>
-  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration page!</title>
+  <link rel="stylesheet" href="userregistration.css">
+  <script src="https://kit.fontawesome.com/7f56dcb44b.js" crossorigin="anonymous"></script>
+</head>
 
-  <div class="input_box">
-    <span class="icon">
-      <i class="fa-solid fa-lock"></i>
-    </span>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" minlength="8" required="">
-  </div>
-  
-  
-  <p id="Warning_message" style="color:red"></p>
+<body>
+<section>
+  <h1 class="title">Welcome To The Smartpharma User Registration!</h1>
 
-  <div class="input_box">
-    <span class="icon">
-      <i class="fa-solid fa-lock"></i>
-    </span>
-    <label for="user_password">Conform_password:</label>
-    <input type="password" id="user_password" name="user_password" minlength="8" required="">
-  </div>
-  
-  
-  <p id="Error_message" style="color:red"></p>
-  
+  <div class="registration_box">
+    <form action="Smartpharma.php" method="post" onsubmit="return validation()" class="form-grid">
 
-  <div class="reseat">
-    <input type="reset" value="Cancel">
+      <div class="input_box">
+        <span class="icon"><i class="fa-regular fa-envelope"></i></span>
+        <label>Email:</label>
+        <input type="email" name="useremail" required>
+      </div>
+
+      <div class="input_box">
+        <span class="icon"><i class="fa-solid fa-square-phone"></i></span>
+        <label>Phone:</label>
+        <input type="tel" name="phone">
+      </div>
+
+      <div class="input_box">
+        <span class="icon"><i class="fa-solid fa-circle-user"></i></span>
+        <label>Username:</label>
+        <input type="text" name="username" minlength="4" maxlength="15">
+      </div>
+
+      <div class="input_box">
+        <span class="icon"><i class="fa-solid fa-lock"></i></span>
+        <label>Password:</label>
+        <input type="password" name="password" minlength="8" required>
+      </div>
+
+      <div class="input_box">
+        <span class="icon"><i class="fa-solid fa-lock"></i></span>
+        <label>Confirm Password:</label>
+        <input type="password" name="user_password" minlength="8" required>
+      </div>
+
+
+      <div class="button-group">
+        <button type="reset" class="reseat">Cancel</button>
+        <button type="submit" class="registor">Register</button>
+      </div>
+
+    </form>
   </div>
- 
-  <div class="registor">
-    <input type="submit" value="Registor">
-  </div>
-  
-  
-</form>
-       </div>
 </section>
-
-  </body>
+</body>
 </html>
