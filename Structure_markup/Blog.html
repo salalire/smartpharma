@@ -1,163 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartPharma | Health Blog</title>
-
-  
-  <!-- Icons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Pharma Blog</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="blog.css">
 </head>
 <body>
 
-  <!-- Blog Header -->
-  <header>
-    <section class="blog" id="blog">
-      <div class="heading">
-        <span>Health Tips & Stories</span>
-        <h2>From Our Pharmacy Blog</h2>
-        <p>Trusted advice, wellness tips, and everyday health insights which are written with care.</p>
-      </div>
-    </section>
-  </header>
+<!-- HEADER -->
+<header>
+    <a href="#" class="logo">💊 Smart <span>Pharma Blog</span></a>
+    
+</header>
 
-  <!-- Blog Cards -->
-  <div class="blog-container">
-
-    <!-- Card 1 -->
-    <div class="blog box">
-      <div class="box-img">
-        <img src="allergies.jpg" alt="Managing Allergies Naturally" />
-      </div>
-
-      <div class="title-snippet">
-        <h3>Managing Allergies Naturally</h3>
-        <p>Spring is beautiful — unless you're sneezing nonstop...</p>
-
-        <!-- Toggle hidden text -->
-        <a href="#" class="read-more" onclick="toggleContent(this)">Read More</a>
-
-        <div class="more-content" style="display: none;">
-          <p>Seasonal allergies don’t have to ruin your day...</p>
-        </div>
-      </div>
+<!-- INTRO SECTION -->
+<section class="home" id="home">
+    <div class="home-text">
+        <h1><span>Stay</span> Healthy & Informed <br> With <span>Smart Pharma</span></h1>
+        <p>Explore expert tips on health, nutrition, and wellness. Learn how to improve your daily habits, maintain good nutrition, and stay energized with trusted insights from Smart Pharma.</p>
+        <a href="#blog" class="btn">Read Blog</a>
     </div>
+    
+</section>
 
-    <!-- Card 2 -->
-    <div class="blog box">
-      <div class="box-img">
-        <img src="prescription.jpg" alt="Prescription Label Tips" />
-      </div>
-
-      <div class="title-snippet">
-        <h3>What Your Prescription Label Really Means</h3>
-        <p>"Take with food"? "Avoid sunlight"?...</p>
-
-        <!-- Toggle hidden text -->
-        <a href="#" class="read-more" onclick="toggleContent(this)">Read More</a>
-
-        <div class="more-content" style="display: none;">
-          <p>Prescription labels contain vital instructions...</p>
+<!-- SEARCH BAR & CATEGORY NAV -->
+<section class="search-section" id="blog">
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-box" placeholder="Search blog posts...">
+        <div class="category-nav">
+            <button class="filter-btn" data-filter="health-tips">Health Tips</button>
+            <button class="filter-btn" data-filter="nutrition">Nutrition</button>
+            <button class="filter-btn" data-filter="wellness">Wellness</button>
         </div>
-      </div>
     </div>
+</section>
 
-    <!-- Card 3 -->
-    <div class="blog box">
-      <div class="box-img">
-        <img src="sunscreen.jpg" alt="Sunscreen Myths Busted" />
-      </div>
 
-      <div class="title-snippet">
-        <h3>Sunscreen Myths Busted</h3>
-        <p>Yes, you need it even on cloudy days...</p>
-
-        <!-- Toggle hidden text -->
-        <a href="#" class="read-more" onclick="toggleContent(this)">Read More</a>
-
-        <div class="more-content" style="display: none;">
-          <p>Cloudy skies don’t block UV rays...</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Newsletter -->
-  <aside class="newsletter">
-    <h2>Stay in the loop</h2>
-    <p>Get monthly tips, pharmacy updates, and wellness stories straight to your inbox.</p>
-    <form>
-      <input type="email" placeholder="Your email address" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </aside>
-
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
+<!-- BLOG GRID -->
+<section class="shop" id="tips">
     <div class="heading">
-      <span>Get in Touch</span>
-      <h2>Contact Us</h2>
-      <p>Have questions about your health or prescriptions?</p>
+        <span>Latest Tips</span>
+        <h2>Health & Wellness</h2>
     </div>
+    <div class="shop-container" id="blogGrid">
 
-    <!-- Contact Form -->
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <section class="footer" id="footer">
-      <div class="footer-box">
-        <h2>Smart <span>Pharma</span></h2>
-        <p>At SmartPharma, we believe every life deserves health and support.</p>
-
-        <!-- Social Icons -->
-        <div class="social">
-          <a href="#"><i class='bx bxl-facebook'></i></a>
-          <a href="#"><i class='bx bxl-twitter'></i></a>
-          <a href="#"><i class='bx bxl-instagram'></i></a>
+        <!-- HEALTH TIPS -->
+        <div class="box blog-card" data-category="health-tips">
+            <div class="box-img">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.88rykQVGdrteaV8nRP-EZQHaE7?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="allergies">
+            </div>
+            <div class="title-price blog-card-content">
+                <h3>Understanding Seasonal Allergies</h3>
+                <span>Health Tips</span>
+                <a href="#" class="read-more" onclick="showDetail(event, 'allergies')">Read More</a>
+                <div class="detail-tip" id="allergies">
+                    <p>Seasonal allergies occur when your immune system reacts to pollen from trees, grasses, and weeds...</p>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class="footer-box">
-        <h3>Services</h3>
-        <ul>
-          <li><a href="#">Product</a></li>
-          <li><a href="#">Help & Support</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
-      </div>
+        <div class="box blog-card" data-category="health-tips">
+            <div class="box-img">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.g7qx9zYq3-lR-MMNvbTjEgHaEK?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+            </div>
+            <div class="title-price blog-card-content">
+                <h3>Boost Your Immunity Naturally</h3>
+                <span>Health Tips</span>
+                <a href="#" class="read-more" onclick="showDetail(event, 'immunity')">Read More</a>
+                <div class="detail-tip" id="immunity">
+                    <p>Eating a balanced diet, exercising regularly, and getting enough sleep are key to immunity...</p>
+                </div>
+            </div>
+        </div>
 
-      <div class="footer-box">
-        <h3>Product</h3>
-        <ul>
-          <li><a href="#">Medication</a></li>
-          <li><a href="#">Advice Service</a></li>
-          <li><a href="#">Personal Care & Hygiene</a></li>
-          <li><a href="#">Household & Sanitization</a></li>
-        </ul>
-      </div>
+        <div class="box blog-card" data-category="health-tips">
+            <div class="box-img">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.X9ZorlaCkpayFugtrp1eLAHaF6?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Stress">
+            </div>
+            <div class="title-price blog-card-content">
+                <h3>Managing Stress Daily</h3>
+                <span>Health Tips</span>
+                <a href="#" class="read-more" onclick="showDetail(event, 'stress')">Read More</a>
+                <div class="detail-tip" id="stress">
+                    <p>Meditation, breathing exercises, and regular breaks help in managing stress efficiently...</p>
+                </div>
+            </div>
+        </div>
 
-      <div class="footer-box contact-info">
-        <h3>Contact</h3>
-        <span>Addis Ababa, Ethiopia</span>
-        <span>+25193791780</span>
-        <span>SmartPharma@gmail.com</span>
-      </div>
-    </section>
+        <!-- NUTRITION -->
+        <div class="box blog-card" data-category="nutrition">
+            <div class="box-img">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500" alt="">
+            </div>
+            <div class="title-price blog-card-content">
+                <h3>The Importance of Vitamin D</h3>
+                <span>Nutrition</span>
+                <a href="#" class="read-more" onclick="showDetail(event, 'vitaminD')">Read More</a>
+                <div class="detail-tip" id="vitaminD">
+                    <p>Vitamin D is essential for strong bones, immune system function, and overall wellness...</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="copyright">
-      <p>&#169; 2025 PharmaCare. Made with care for your health.</p>
+        <div class="box blog-card" data-category="nutrition">
+            <div class="box-img">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500" alt="">
+            </div>
+            <div class="title-price blog-card-content">
+                <h3>Healthy Eating on a Budget</h3>
+                <span>Nutrition</span>
+                <a href="#" class="read-more" onclick="showDetail(event, 'budget')">Read More</a>
+                <div class="detail-tip" id="budget">
+                    <p>Plan meals, buy seasonal fruits and vegetables, and avoid processed foods to eat healthy cost-effectively...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="box blog-card" data-category="nutrition">
+            <div class="box-img">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.9FxGSJ3ec8Xo9uhJvFrstwHaE7?cb=ucfimg2&ucfimg=1&w=2000&h=1333&rs=1&pid=ImgDetMain&o=7&rm=3" alt="hydration">
+            </div>
+            <div class="title-price blog-card-content">
+                <h3>Hydration Matters</h3>
+                <span>Nutrition</span>
+                <a href="#" class="read-more" onclick="showDetail(event, 'hydration')">Read More</a>
+                <div class="detail-tip" id="hydration">
+                    <p>Staying hydrated improves digestion, skin health, and energy levels...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WELLNESS -->
+        <div class="box blog-card" data-category="wellness">
+            <div class="box-img">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.aPPOr_R2fT5UVGExnIqcLwHaFh?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Yoga">
+            </div>
+            <div class="title-price blog-card-content">
+                <h3>Yoga for Beginners</h3>
+                <span>Wellness</span>
+                <a href="#" class="read-more" onclick="showDetail(event, 'yoga')">Read More</a>
+                <div class="detail-tip" id="yoga">
+                    <p>Yoga improves flexibility, reduces stress, and promotes mindfulness...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="box blog-card" data-category="wellness">
+            <div class="box-img">
+                <img src="https://images.unsplash.com/photo-1540206395-68808572332f?w=500" alt="">
+            </div>
+            <div class="title-price blog-card-content">
+                <h3>Meditation Practices</h3>
+                <span>Wellness</span>
+                <a href="#" class="read-more" onclick="showDetail(event, 'meditation')">Read More</a>
+                <div class="detail-tip" id="meditation">
+                    <p>Daily meditation improves focus, reduces anxiety, and boosts emotional health...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="box blog-card" data-category="wellness">
+            <div class="box-img">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.jj8m--DIRhQCf2raDO12BgHaE7?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="sleep hygiene">
+            </div>
+            <div class="title-price blog-card-content">
+                <h3>Sleep Hygiene Tips</h3>
+                <span>Wellness</span>
+                <a href="#" class="read-more" onclick="showDetail(event, 'sleep')">Read More</a>
+                <div class="detail-tip" id="sleep">
+                    <p>Maintain a consistent sleep schedule, reduce screen time, and create a relaxing bedtime routine...</p>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </footer>
+</section>
 
+<!-- SUBSCRIPTION SECTION -->
+<section class="newsletter" id="subscribe">
+    <h2>Subscribe To Daily Tips</h2>
+    <div class="news-box">
+        <input type="email" id="subscriberEmail" placeholder="Enter Your Email...">
+        <a href="#" class="btn" onclick="subscribe(event)">Subscribe</a>
+        <p id="subscriptionMessage"></p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-box">
+        <h2>Smart <span>Pharma</span></h2>
+        <p>Your trusted source for health & wellness tips and pharmacy insights.</p>
+        <div class="social">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+       </div>
+    </div>
+    <div class="copyright">
+        <p>&#169; 2024 Smart Pharma. All Rights Reserved.</p>
+        
+    </div>
+</footer>
+
+<script src="scriptss.js"></script>
 </body>
 </html>
