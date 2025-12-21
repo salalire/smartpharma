@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f2f6f8;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #fff;
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #1fa2b1;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.btn {
+  background: #1fa2b1;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(180deg, #8cbcc7, #0d3c55);
+  color: #fff;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+
+/* SEARCH */
+.search-box {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  background: #1fa2b1;
+  color: white;
+  border: none;
+  padding: 0 20px;
+}
+
+/* FEATURES */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature i {
+  background: rgba(255,255,255,0.2);
+  padding: 18px;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* WHY CHOOSE US */
+.why-us {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.why-us h2 {
+  font-size: 32px;
+  margin-bottom: 50px;
+  color: #0d3c55;
+}
+
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.why-card {
+  background: #fff;
+  padding: 40px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+}
+
+.why-card i {
+  font-size: 32px;
+  color: #1fa2b1;
+  margin-bottom: 20px;
+}
+
+.why-card h3 {
+  margin-bottom: 15px;
+}
+
+.why-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+  background: #0d2b3e;
+  color: #fff;
+  padding: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+footer h4 {
+  margin-bottom: 15px;
+}
+
+footer a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.socials i {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+footer p {
+  text-align: center;
+  margin-top: 30px;
+  color: #aaa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .features {
+    flex-direction: column;
+  }
+
+  .why-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  nav {
+    display: none;
+  }
+}
