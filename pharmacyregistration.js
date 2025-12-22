@@ -1,5 +1,3 @@
-<script>
-
 
  const regionSelect = document.getElementById("region");
   const addisSubcity = document.getElementById("addis-subcity");
@@ -77,4 +75,4 @@
            return false;
          }
        }
-    </script>
+   
