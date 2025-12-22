@@ -1,1 +1,50 @@
 
+        
+        function password_check(){
+          const password=document.getElementById("password").value;
+          const Conform_password=document.getElementById("user_password").value;
+          const Error_message=document.getElementById("Error_message");
+          
+          if(password==Conform_password){
+            Error_message.textContent="";
+            return true;
+          }
+          else{
+            Error_message.textContent="Your password do not match Please check it";
+            return false;
+          }
+        }
+        
+        function char_check() {
+          let isUpperCase = false;
+          let isLowerCase = false;
+          let isNumber = false;
+          let isSpecialCharacter = false;
+
+          const password = document.getElementById("password").value;
+          const Warning_message = document.getElementById("Warning_message");
+
+         if (/[A-Z]/.test(password)) isUpperCase = true;
+        if (/[a-z]/.test(password)) isLowerCase = true;
+       if (/[0-9]/.test(password)) isNumber = true;
+      if (/[!@#$%^&*()_+?.,><~`]/.test(password)) isSpecialCharacter = true;
+
+    if (isSpecialCharacter && isNumber && isLowerCase && isUpperCase) {
+    Error_message.textContent = "";
+    return true;
+  } else {
+    Warning_message.textContent = "Your password must contain at least one special character, uppercase letter, lowercase letter, and number.";
+    return false;
+  }
+}
+
+        
+        function validation(){
+          const isconfirmed=password_check();
+          const ischecked=char_check();
+          if(ischecked&&isconfirmed()){
+            return true;
+          }
+          return false;
+        }
+     
