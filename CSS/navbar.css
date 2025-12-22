@@ -2,60 +2,37 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(26, 35, 126, 0.9);
-  padding: 10px 20px;
-  color: white;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
+  margin-right: 16px;
   font-weight: 600;
-  padding: 8px 12px;
-  display: block;
 }
 
-.nav-menu {
-  list-style: none;
+.nav-links {
   display: flex;
-  gap: 15px;
-  margin: 0;
-  padding: 0;
+  align-items: center;
 }
 
-.nav-menu li {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 35px;
-  left: 0;
-  background-color: rgba(63, 81, 181, 0.95);
-  list-style: none;
-  padding: 5px 0;
-  min-width: 180px;
-  border-radius: 6px;
-  z-index: 1000;
-}
-
-.dropdown-menu li a {
-  padding: 8px 12px;
+.btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background: #1976d2;
   color: white;
-}
-
-.dropdown-menu li a:hover {
-  background-color: #303f9f;
-  border-radius: 4px;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
   cursor: pointer;
 }
 
-.dropdown > a::after {
-  content: " ▼";
-  font-size: 10px;
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
