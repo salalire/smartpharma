@@ -36,3 +36,30 @@
   color: white;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 15px 0;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    margin: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
