@@ -1,204 +1,226 @@
-<!-- medications.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SmartPharma | Medications</title>
+    <title>SmartPharma | Shop</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <h1>Available Medications</h1>
-      <p>
-        Browse our list of common medications and their prices (in Ethiopian
-        Birr).
-      </p>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo">SmartPharma <span>Online</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Health Blog</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="btn">Sign In</a>
+      </nav>
     </header>
 
-    <!-- Medications Table -->
-    <main>
-      <section class="medication-list">
-        <!-- Aspirin -->
-        <div class="medication-card">
-          <img src="https://placehold.co/200x200?text=Aspirin" alt="Aspirin" />
-          <div class="medication-info">
-            <h3>Aspirin</h3>
-            <p class="description">
-              Used to reduce fever and relieve mild to moderate pain.
-            </p>
-            <p class="pharmacy"><strong>Pharmacy:</strong> SmartPharma</p>
-            <p class="price"><strong>Price:</strong> Br 120</p>
-            <small class="date-posted">Posted: 2024-12-20</small>
-          </div>
+    <!-- HERO SECTION -->
+    <section class="hero shop-hero">
+      <h1>Shop Trusted Health Products</h1>
+      <p>
+        Browse medicines, supplements, and wellness essentials — delivered
+        safely to your door.
+      </p>
+      <div class="search-filter-container">
+        <div class="search-box">
+          <input type="text" placeholder="Search products..." />
+          <button><i class="fas fa-search"></i></button>
         </div>
-
-        <!-- Ibuprofen -->
-        <div class="medication-card">
-          <img
-            src="https://placehold.co/200x200?text=Ibuprofen"
-            alt="Ibuprofen"
-          />
-          <div class="medication-info">
-            <h3>Ibuprofen</h3>
-            <p class="description">
-              Non-steroidal anti-inflammatory drug (NSAID).
-            </p>
-            <p class="pharmacy"><strong>Pharmacy:</strong> SmartPharma</p>
-            <p class="price"><strong>Price:</strong> Br 150</p>
-            <small class="date-posted">Posted: 2024-12-19</small>
-          </div>
+        <div class="filter-box">
+          <select name="med-category" placeholder="sami">
+            <optgroup label="Common Needs">
+              <option value="pain">Pain Relief</option>
+              <option value="infection">Infection/Antibiotics</option>
+              <option value="digestion">Digestion & Stomach</option>
+            </optgroup>
+            <optgroup label="Specialized Care">
+              <option value="heart">Heart & Blood Pressure</option>
+              <option value="mental">Mental Health</option>
+              <option value="hormone">Diabetes & Hormones</option>
+            </optgroup>
+          </select>
         </div>
-
-        <!-- Acetaminophen -->
-        <div class="medication-card">
-          <img
-            src="https://placehold.co/200x200?text=Acetaminophen"
-            alt="Acetaminophen"
-          />
-          <div class="medication-info">
-            <h3>Acetaminophen</h3>
-            <p class="description">Analgesic used to treat pain and fever.</p>
-            <p class="pharmacy"><strong>Pharmacy:</strong> SmartPharma</p>
-            <p class="price"><strong>Price:</strong> Br 95</p>
-            <small class="date-posted">Posted: 2024-12-18</small>
-          </div>
-        </div>
-
-        <!-- Loratadine -->
-        <div class="medication-card">
-          <img
-            src="https://placehold.co/200x200?text=Loratadine"
-            alt="Loratadine"
-          />
-          <div class="medication-info">
-            <h3>Loratadine</h3>
-            <p class="description">Antihistamine used to treat allergies.</p>
-            <p class="pharmacy"><strong>Pharmacy:</strong> SmartPharma</p>
-            <p class="price"><strong>Price:</strong> Br 220</p>
-            <small class="date-posted">Posted: 2024-12-21</small>
-          </div>
-        </div>
-
-        <!-- Cetirizine -->
-        <div class="medication-card">
-          <img
-            src="https://placehold.co/200x200?text=Cetirizine"
-            alt="Cetirizine"
-          />
-          <div class="medication-info">
-            <h3>Cetirizine</h3>
-            <p class="description">
-              Used for relief of hay fever and allergy symptoms.
-            </p>
-            <p class="pharmacy"><strong>Pharmacy:</strong> SmartPharma</p>
-            <p class="price"><strong>Price:</strong> Br 250</p>
-            <small class="date-posted">Posted: 2024-12-20</small>
-          </div>
-        </div>
-
-        <!-- Amoxicillin -->
-        <div class="medication-card">
-          <img
-            src="https://placehold.co/200x200?text=Amoxicillin"
-            alt="Amoxicillin"
-          />
-          <div class="medication-info">
-            <h3>Amoxicillin</h3>
-            <p class="description">
-              Antibiotic used to treat bacterial infections.
-            </p>
-            <p class="pharmacy"><strong>Pharmacy:</strong> SmartPharma</p>
-            <p class="price"><strong>Price:</strong> Br 300</p>
-            <small class="date-posted">Posted: 2024-12-15</small>
-          </div>
-        </div>
-
-        <!-- Metformin -->
-        <div class="medication-card">
-          <img
-            src="https://placehold.co/200x200?text=Metformin"
-            alt="Metformin"
-          />
-          <div class="medication-info">
-            <h3>Metformin</h3>
-            <p class="description">
-              First-line medication for the treatment of type 2 diabetes.
-            </p>
-            <p class="pharmacy"><strong>Pharmacy:</strong> SmartPharma</p>
-            <p class="price"><strong>Price:</strong> Br 280</p>
-            <small class="date-posted">Posted: 2024-12-10</small>
-          </div>
-        </div>
-
-        <!-- Atorvastatin -->
-        <div class="medication-card">
-          <img
-            src="https://placehold.co/200x200?text=Atorvastatin"
-            alt="Atorvastatin"
-          />
-          <div class="medication-info">
-            <h3>Atorvastatin</h3>
-            <p class="description">
-              Statin used to prevent cardiovascular disease.
-            </p>
-            <p class="pharmacy"><strong>Pharmacy:</strong> SmartPharma</p>
-            <p class="price"><strong>Price:</strong> Br 350</p>
-            <small class="date-posted">Posted: 2024-12-12</small>
-          </div>
-        </div>
-
-        <!-- Omeprazole -->
-        <div class="medication-card">
-          <img
-            src="https://placehold.co/200x200?text=Omeprazole"
-            alt="Omeprazole"
-          />
-          <div class="medication-info">
-            <h3>Omeprazole</h3>
-            <p class="description">
-              Used to treat gastroesophageal reflux disease (GERD).
-            </p>
-            <p class="pharmacy"><strong>Pharmacy:</strong> SmartPharma</p>
-            <p class="price"><strong>Price:</strong> Br 200</p>
-            <small class="date-posted">Posted: 2024-12-14</small>
-          </div>
-        </div>
-
-        <!-- Hydrochlorothiazide -->
-        <div class="medication-card">
-          <img
-            src="https://placehold.co/200x200?text=Hydrochlorothiazid"
-            alt="Hydrochlorothiazide"
-          />
-          <div class="medication-info">
-            <h3>Hydrochlorothiazide</h3>
-            <p class="description">
-              Diuretic medication often used to treat high blood pressure.
-            </p>
-            <p class="pharmacy"><strong>Pharmacy:</strong> SmartPharma</p>
-            <p class="price"><strong>Price:</strong> Br 180</p>
-            <small class="date-posted">Posted: 2024-12-16</small>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <section>
-      <h2>Notes</h2>
-      <ul>
-        <li>Consult your doctor before taking any medication.</li>
-        <li>Some medications may require a prescription.</li>
-      </ul>
+      </div>
     </section>
 
-    <!-- Footer -->
+    <!-- PRODUCT GRID -->
+    <section class="products">
+      <h2>Featured Products</h2>
+      <div class="product-grid">
+        <!-- 16 Product Cards with ETB -->
+        <div class="product-card">
+          <img src="../media/paracetamol.jpeg" alt="Paracetamol" />
+          <h3>Paracetamol Tablets</h3>
+          <p class="price">ETB 320</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/ibuprofen.jpeg" alt="Ibuprofen" />
+          <h3>Ibuprofen Capsules</h3>
+          <p class="price">ETB 450</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/vitamine_c.jpeg" alt="Vitamin C" />
+          <h3>Vitamin C Tablets</h3>
+          <p class="price">ETB 700</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/omega3.jpeg" alt="Omega 3" />
+          <h3>Omega-3 Capsules</h3>
+          <p class="price">ETB 1000</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/amoxicillin.jpeg" alt="Amoxicillin" />
+          <h3>Amoxicillin</h3>
+          <p class="price">ETB 400</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/antibiotics.jpeg" alt="Antibiotic" />
+          <h3>Antibiotic Syrup</h3>
+          <p class="price">ETB 850</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/pain_relief.jpeg" alt="Pain Relief" />
+          <h3>Pain Relief Gel</h3>
+          <p class="price">ETB 550</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/multi_vitamine.jpeg" alt="Multivitamins" />
+          <h3>Multivitamin Pack</h3>
+          <p class="price">ETB 1100</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/cough_syrup.jpeg" alt="Cough Syrup" />
+          <h3>Cough Syrup</h3>
+          <p class="price">ETB 370</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/Ciprofloxacin.jpeg" alt="Ciprofloxacin" />
+          <h3>Ciprofloxacin</h3>
+          <p class="price">ETB 620</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/Omeprazole.jpeg" alt="Omeprazole" />
+          <h3>Omeprazole</h3>
+          <p class="price">ETB 250</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/Amlodipine.jpeg" alt="Amlodipine" />
+          <h3>Amlodipine</h3>
+          <p class="price">ETB 1350</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/Sertraline.jpeg" alt="Sertraline" />
+          <h3>Sertraline</h3>
+          <p class="price">ETB 320</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/Metformin.jpeg" alt="Metformin" />
+          <h3>Metformin</h3>
+          <p class="price">ETB 600</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/Levothyroxine.jpeg" alt="Levothyroxine" />
+          <h3>Levothyroxine</h3>
+          <p class="price">ETB 300</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="../media/vaseline.jpeg" alt="Vaseline" />
+          <h3>Vaseline</h3>
+          <p class="price">ETB 480</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="../media/roller.jpeg"
+            alt="Roller"
+          />
+          <h3>Roller</h3>
+          <p class="price">ETB 300</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="../media/nivea_cream.jpeg"
+            alt="Nivea Cream"
+          />
+          <h3>Nivea Cream</h3>
+          <p class="price">ETB 300</p>
+          <button class="shop-btn">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-      <p>
-        Return to
-        <a href="smartpharmauserregistration.html">User Registration</a> or
-        <a href="login.html">Login</a>
-      </p>
+      <div class="footer-grid">
+        <div>
+          <h4>Quick Links</h4>
+          <a href="#">About Us</a>
+          <a href="#">FAQ</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+
+        <div>
+          <h4>Contact Info</h4>
+          <p>Email: support@smartpharma.com</p>
+          <p>Phone: +251-900-000000</p>
+        </div>
+
+        <div>
+          <h4>Follow Us</h4>
+          <div class="socials">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+
+      <p class="copyright">© 2025 SmartPharma</p>
     </footer>
   </body>
 </html>
