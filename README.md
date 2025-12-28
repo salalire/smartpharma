@@ -1,5 +1,4 @@
-
-# **SMARTPHARMA** – Online Medicine Store 
+# **SMARTPHARMA** – Online Medicine shop
 
 **Developed By:**
 - **Samuel Lire**
@@ -7,7 +6,7 @@
 - **Rahmet Abdela**
 - **Sara Redwan**
 - **Paulos Asmelash**
-#  SmartPharma – Online Medicine Store 💊
+#  SmartPharma – Online Medicine Shop 💊
 
 <p align="center">
   <marquee behavior="scroll" direction="left" scrollamount="10">
@@ -52,17 +51,13 @@
 SmartPharma/
 │
 ├─ structure-markup/
-|   ├─ Component/
-|       ├─ footer.html
-        ├─ nvar.html   
+|    ├─ Component/
+|         ├─ footer.html
+|         ├─ navbar.html
 │   ├─ index.html
 │   ├─ about.html
-│   ├─ blog.html
-│   ├─ medication.html
-|    ├─ registration.html
-|    ├─ agreement.html
-|    ├─ pharmasyregistration.html
-|    └─ login.html    
+│   ├─ page.html
+│   └─ ... (other HTML pages)
 │
 ├─ assets/
 │   ├─ css/
@@ -123,4 +118,3 @@ SmartPharma emphasizes **clarity, usability, and accessibility**. The interface 
 
 ---
 
-<p align="center"><em>SmartPharma – Your Health, Our Priority.</em></p>
