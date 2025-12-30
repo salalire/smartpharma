@@ -45,11 +45,19 @@ nav a {
 
 /* HERO */
 .hero {
-  background: linear-gradient(180deg, #8cbcc7, #0d3c55);
-  color: #fff;
+  background:
+    linear-gradient(rgba(13, 60, 85, 0.5), rgba(13, 60, 85, 0.5)),
+    url('https://static.vecteezy.com/system/resources/previews/022/006/829/large_2x/pharmacology-and-pharmaceuticals-healthcare-background-with-copy-space-generative-ai-illustration-photo.jpeg');
+
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
   padding: 90px 20px;
+  color: #fff;
   text-align: center;
 }
+
+
 
 .hero h1 {
   font-size: 38px;
@@ -99,6 +107,28 @@ nav a {
   font-size: 20px;
   margin-bottom: 10px;
 }
+.glass-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  margin-top: 50px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* subtle border */
+  background: rgba(255, 255, 255, 0.1);        /* transparent background */
+  backdrop-filter: blur(10px);                 /* glass blur effect */
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.25);       /* slightly more visible on hover */
+  border-color: #fff;                           /* highlight border */
+  transform: translateY(-2px);
+  color: #fff;
+}
+
 
 /* WHY CHOOSE US */
 .why-us {
@@ -146,6 +176,162 @@ nav a {
   color: #666;
   line-height: 1.6;
 }
+/*transition section*/
+.blog-transition {
+  padding: 80px 20px;
+  background: #f2f6f8;
+}
+
+.blog-transition .container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+  flex-wrap: wrap; /* for responsiveness */
+}
+
+.blog-transition .blog-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.blog-transition .blog-image img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.blog-transition .blog-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.blog-transition h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #0d3c55;
+}
+
+.blog-transition p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.blog-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #1fa2b1;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.blog-btn:hover {
+  background: #15808d;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE: stack on smaller screens */
+@media (max-width: 900px) {
+  .blog-transition .container {
+    flex-direction: column;
+  }
+  .blog-transition .blog-image,
+  .blog-transition .blog-content {
+    min-width: 100%;
+  }
+}
+
+/* CATEGORIES */
+.categories {
+  padding: 80px 20px;
+  background: #f2f6f8;
+}
+
+.categories h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 32px;
+  color: #0d3c55;
+}
+
+.category-card {
+  background: #fff;
+  padding: 28px 20px;
+  border-radius: 18px;
+  border: 2px solid #e3f2f4;
+  text-align: center;
+  max-width: 260px;   
+  margin: auto;       
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+
+
+.category-card i {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  margin: 0 auto 20px;
+  display: block;
+  border-radius: 50%;
+  background: rgba(31, 162, 177, 0.15);
+  color: #1fa2b1;
+  font-size: 26px;
+}
+.category-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  justify-items: center;                  
+  gap: 30px;
+}
+
+
+
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  background: #e6f7f9;
+}
+/* shop-button*/
+.shop-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+  background: #1fa2b1;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.category-card h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #0d3c55;
+}
+
+.category-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+.shop-btn:hover {
+  background: #15808d;
+  transform: translateY(-2px);
+}
+
+
 
 /* FOOTER */
 footer {
