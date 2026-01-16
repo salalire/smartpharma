@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (userMatch || pharmacyMatch) {
+      const account = userMatch
+        ? { ...userMatch, role: "user" }
+        : { ...pharmacyMatch, role: "pharmacy" };
+
+      localStorage.setItem("currentUser", JSON.stringify(account));
+
       message.style.color = "green";
       message.textContent = "Login successful";
 

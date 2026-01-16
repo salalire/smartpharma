@@ -94,13 +94,18 @@ function char_check() {
 
 function storeUserData() {
   const userData = {
+    role: "user",
     email: getInput("useremail").value,
     phone: getInput("phone").value,
     username: getInput("username").value,
-    password: getInput("password").value
+    password: getInput("password").value,
+    medicines: []
   };
 
   let users = JSON.parse(localStorage.getItem("users")) || [];
   users.push(userData);
   localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("currentUser", JSON.stringify(userData));
+
+  window.location.href = "Home.html";
 }

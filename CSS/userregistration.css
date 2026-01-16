@@ -108,14 +108,14 @@ section {
   border: none;
   font-size: 1em;
   cursor: pointer;
-  background-color: skyblue;
+  background-color: #1fa2b1;
 }
 
 .reseat:hover,
 .registor:hover {
-  background-color: slateblue;
+  background-color:  rgb(98, 189, 250);
   font-weight: bold;
-  color: #000;
+  color: white ;
 }
 .terms-area {
   grid-column: 1 / -1;
