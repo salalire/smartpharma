@@ -2,209 +2,294 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Pharma Blog</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="blog.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/blog.css">
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-    <a href="#" class="logo">💊 Smart <span>Pharma Blog</span></a>
-    
-</header>
+<!-- BACK TO HOME -->
+<div class="back-home">
+    <a href="home.html" class="home-btn"><i class="fas fa-home"></i> Back to Home</a>
+</div>
 
-<!-- INTRO SECTION -->
-<section class="home" id="home">
-    <div class="home-text">
-        <h1><span>Stay</span> Healthy & Informed <br> With <span>Smart Pharma</span></h1>
-        <p>Explore expert tips on health, nutrition, and wellness. Learn how to improve your daily habits, maintain good nutrition, and stay energized with trusted insights from Smart Pharma.</p>
-        <a href="#blog" class="btn">Read Blog</a>
-    </div>
-    
-</section>
-
-<!-- SEARCH BAR & CATEGORY NAV -->
-<section class="search-section" id="blog">
+<!-- CATEGORY FILTERS -->
+<section class="search-section">
     <div class="search-container">
-        <input type="text" id="searchInput" class="search-box" placeholder="Search blog posts...">
-        <div class="category-nav">
-            <button class="filter-btn" data-filter="health-tips">Health Tips</button>
-            <button class="filter-btn" data-filter="nutrition">Nutrition</button>
-            <button class="filter-btn" data-filter="wellness">Wellness</button>
-        </div>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="health-tips">Health Tips</button>
+        <button class="filter-btn" data-filter="nutrition">Nutrition</button>
+        <button class="filter-btn" data-filter="wellness">Wellness</button>
     </div>
 </section>
-
 
 <!-- BLOG GRID -->
-<section class="shop" id="tips">
-    <div class="heading">
-        <span>Latest Tips</span>
-        <h2>Health & Wellness</h2>
-    </div>
-    <div class="shop-container" id="blogGrid">
+<div class="blog-container">
+    <div class="blog-grid" id="blogGrid">
 
-        <!-- HEALTH TIPS -->
-        <div class="box blog-card" data-category="health-tips">
-            <div class="box-img">
-                <img src="https://tse1.mm.bing.net/th/id/OIP.88rykQVGdrteaV8nRP-EZQHaE7?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="allergies">
-            </div>
-            <div class="title-price blog-card-content">
+        <!-- ================= HEALTH TIPS ================= -->
+        <div class="blog-card" data-category="health-tips">
+            <img src="https://justinhealth.com/wp-content/uploads/2020/05/706619_Natural-Solutions-Allergies_03_042920.jpg" alt="seasonal allergies">
+            <div class="blog-content">
+                <span>Health Tips</span>
                 <h3>Understanding Seasonal Allergies</h3>
-                <span>Health Tips</span>
-                <a href="#" class="read-more" onclick="showDetail(event, 'allergies')">Read More</a>
+                <p>Learn how to manage allergies effectively.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'allergies')">Read More</a>
                 <div class="detail-tip" id="allergies">
-                    <p>Seasonal allergies occur when your immune system reacts to pollen from trees, grasses, and weeds...</p>
+                    <p>Seasonal allergies occur when your immune system reacts to pollen from trees, grasses, and weeds. Symptoms include sneezing, itchy eyes, and nasal congestion.</p>
+                    <p>Using air filters, staying indoors during high pollen days, and consulting with a doctor for medications can help reduce symptoms.</p>
                 </div>
             </div>
         </div>
 
-        <div class="box blog-card" data-category="health-tips">
-            <div class="box-img">
-                <img src="https://tse1.mm.bing.net/th/id/OIP.g7qx9zYq3-lR-MMNvbTjEgHaEK?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
-            </div>
-            <div class="title-price blog-card-content">
+        <div class="blog-card" data-category="health-tips">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.00jbRtG0Um-KxJmCBVmbjwHaEG?rs=1&pid=ImgDetMain&o=7&rm=3" alt="immunity">
+            <div class="blog-content">
+                <span>Health Tips</span>
                 <h3>Boost Your Immunity Naturally</h3>
-                <span>Health Tips</span>
-                <a href="#" class="read-more" onclick="showDetail(event, 'immunity')">Read More</a>
+                <p>Simple ways to strengthen your immune system.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'immunity')">Read More</a>
                 <div class="detail-tip" id="immunity">
-                    <p>Eating a balanced diet, exercising regularly, and getting enough sleep are key to immunity...</p>
+                    <p>Eating a balanced diet, exercising regularly, and getting enough sleep are key to immunity.</p>
+                    <p>Include fruits, vegetables, and probiotics in your diet for extra support.</p>
                 </div>
             </div>
         </div>
 
-        <div class="box blog-card" data-category="health-tips">
-            <div class="box-img">
-                <img src="https://tse4.mm.bing.net/th/id/OIP.X9ZorlaCkpayFugtrp1eLAHaF6?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Stress">
-            </div>
-            <div class="title-price blog-card-content">
-                <h3>Managing Stress Daily</h3>
+        <div class="blog-card" data-category="health-tips">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.jHJajH3RL_hvutTzQU7Q8QHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="daily stress ">
+            <div class="blog-content">
                 <span>Health Tips</span>
-                <a href="#" class="read-more" onclick="showDetail(event, 'stress')">Read More</a>
+                <h3>Managing Stress Daily</h3>
+                <p>Effective techniques to reduce daily stress.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'stress')">Read More</a>
                 <div class="detail-tip" id="stress">
-                    <p>Meditation, breathing exercises, and regular breaks help in managing stress efficiently...</p>
+                    <p>Meditation, breathing exercises, and regular breaks help manage stress efficiently.</p>
+                    <p>Even 10 minutes of deep breathing can lower cortisol levels and improve focus.</p>
                 </div>
             </div>
         </div>
 
-        <!-- NUTRITION -->
-        <div class="box blog-card" data-category="nutrition">
-            <div class="box-img">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500" alt="">
+        <div class="blog-card" data-category="health-tips">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.3MPud0fVbRIgaXbVETnNwQHaHd?rs=1&pid=ImgDetMain&o=7&rm=3" alt="mental_health">
+            <div class="blog-content">
+                <span>Health Tips</span>
+                <h3>Understanding Mental Health</h3>
+                <p>Learn the signs and strategies for mental wellness.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'mental')">Read More</a>
+                <div class="detail-tip" id="mental">
+                    <p>Mental health is essential for overall wellness. Regular exercise, healthy diet, and mindfulness practices can help.</p>
+                    <p>Seek professional help if experiencing persistent sadness, anxiety, or stress.</p>
+                </div>
             </div>
-            <div class="title-price blog-card-content">
+        </div>
+
+        <div class="blog-card" data-category="health-tips">
+            <img src="https://th.bing.com/th/id/R.9b6e2c34f59ce98db3708d1b53958219?rik=eDiq00Otvyp9%2bg&pid=ImgRaw&r=0" alt="common cold">
+            <div class="blog-content">
+                <span>Health Tips</span>
+                <h3>Preventing Common Colds</h3>
+                <p>Tips to reduce the risk of catching a cold.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'cold')">Read More</a>
+                <div class="detail-tip" id="cold">
+                    <p>Wash your hands regularly, avoid close contact with sick people, and maintain a healthy diet.</p>
+                    <p>Vitamin C rich foods can support your immune system.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-card" data-category="health-tips">
+            <img src="https://th.bing.com/th/id/R.afa44056ddd3f6ad3760649cbde2dfb8?rik=3zVUfK%2bNt1UGUw&pid=ImgRaw&r=0" alt="regular_exercise">
+            <div class="blog-content">
+                <span>Health Tips</span>
+                <h3>Regular Exercise Benefits</h3>
+                <p>Why staying active is important for health.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'exercise')">Read More</a>
+                <div class="detail-tip" id="exercise">
+                    <p>Exercise boosts immunity, improves mood, and strengthens muscles and bones.</p>
+                    <p>Aim for at least 30 minutes of moderate activity most days of the week.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= NUTRITION ================= -->
+        <div class="blog-card" data-category="nutrition">
+            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=500&q=80" alt="">
+            <div class="blog-content">
+                <span>Nutrition</span>
                 <h3>The Importance of Vitamin D</h3>
-                <span>Nutrition</span>
-                <a href="#" class="read-more" onclick="showDetail(event, 'vitaminD')">Read More</a>
+                <p>Why Vitamin D matters for your health.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'vitaminD')">Read More</a>
                 <div class="detail-tip" id="vitaminD">
-                    <p>Vitamin D is essential for strong bones, immune system function, and overall wellness...</p>
+                    <p>Vitamin D is essential for strong bones, immune system function, and overall wellness.</p>
+                    <p>Get sunlight exposure or consider supplements if needed.</p>
                 </div>
             </div>
         </div>
 
-        <div class="box blog-card" data-category="nutrition">
-            <div class="box-img">
-                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500" alt="">
-            </div>
-            <div class="title-price blog-card-content">
+        <div class="blog-card" data-category="nutrition">
+            <img src="https://th.bing.com/th/id/OIP.An6tlGMhNtUPVAEGjNPATQHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="food">
+            <div class="blog-content">
+                <span>Nutrition</span>
                 <h3>Healthy Eating on a Budget</h3>
-                <span>Nutrition</span>
-                <a href="#" class="read-more" onclick="showDetail(event, 'budget')">Read More</a>
+                <p>Tips for nutritious meals without overspending.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'budget')">Read More</a>
                 <div class="detail-tip" id="budget">
-                    <p>Plan meals, buy seasonal fruits and vegetables, and avoid processed foods to eat healthy cost-effectively...</p>
+                    <p>Plan meals, buy seasonal fruits and vegetables, and avoid processed foods to eat healthy cost-effectively.</p>
+                    <p>Cook at home more often to save money and stay healthy.</p>
                 </div>
             </div>
         </div>
 
-        <div class="box blog-card" data-category="nutrition">
-            <div class="box-img">
-                <img src="https://tse1.mm.bing.net/th/id/OIP.9FxGSJ3ec8Xo9uhJvFrstwHaE7?cb=ucfimg2&ucfimg=1&w=2000&h=1333&rs=1&pid=ImgDetMain&o=7&rm=3" alt="hydration">
-            </div>
-            <div class="title-price blog-card-content">
-                <h3>Hydration Matters</h3>
+        <div class="blog-card" data-category="nutrition">
+            <img src="https://th.bing.com/th/id/R.8567d93bc8bfc403613c0d3cb3e9d327?rik=%2fi7vdWQiCrsG4g&pid=ImgRaw&r=0" alt="hydration">
+            <div class="blog-content">
                 <span>Nutrition</span>
-                <a href="#" class="read-more" onclick="showDetail(event, 'hydration')">Read More</a>
+                <h3>Hydration Matters</h3>
+                <p>Learn why drinking enough water is vital.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'hydration')">Read More</a>
                 <div class="detail-tip" id="hydration">
-                    <p>Staying hydrated improves digestion, skin health, and energy levels...</p>
+                    <p>Staying hydrated improves digestion, skin health, and energy levels.</p>
+                    <p>Drink at least 8 cups of water daily and adjust according to activity level.</p>
                 </div>
             </div>
         </div>
 
-        <!-- WELLNESS -->
-        <div class="box blog-card" data-category="wellness">
-            <div class="box-img">
-                <img src="https://tse1.mm.bing.net/th/id/OIP.aPPOr_R2fT5UVGExnIqcLwHaFh?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Yoga">
+        <div class="blog-card" data-category="nutrition">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.QG5gvEQqbWNYlXPvd82CuQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="balanced_diet">
+            <div class="blog-content">
+                <span>Nutrition</span>
+                <h3>Balanced Diet Tips</h3>
+                <p>How to create a healthy and balanced meal plan.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'balanced')">Read More</a>
+                <div class="detail-tip" id="balanced">
+                    <p>Include proteins, healthy fats, carbs, and fiber in each meal.</p>
+                    <p>Eat a variety of foods to get all essential nutrients.</p>
+                </div>
             </div>
-            <div class="title-price blog-card-content">
+        </div>
+
+        <div class="blog-card" data-category="nutrition">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.xZS6LKE9vRxatwSCNgYiXQHaDt?rs=1&pid=ImgDetMain&o=7&rm=3" alt="food to include">
+            <div class="blog-content">
+                <span>Nutrition</span>
+                <h3>Superfoods to Include</h3>
+                <p>Discover nutrient-rich foods for optimal health.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'superfoods')">Read More</a>
+                <div class="detail-tip" id="superfoods">
+                    <p>Berries, nuts, seeds, leafy greens, and salmon are examples of superfoods.</p>
+                    <p>Incorporate them regularly for maximum benefits.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-card" data-category="nutrition">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.Wd1pA2f_CC18k1yNvT_P_wHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="meal preparation stragies">
+            <div class="blog-content">
+                <span>Nutrition</span>
+                <h3>Meal Prep Strategies</h3>
+                <p>Save time and eat healthy by preparing meals in advance.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'mealprep')">Read More</a>
+                <div class="detail-tip" id="mealprep">
+                    <p>Plan your week, batch cook, and store meals properly.</p>
+                    <p>This ensures healthy choices even on busy days.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= WELLNESS ================= -->
+        <div class="blog-card" data-category="wellness">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.5tx5HLyNLM7UsGqYeOGt6QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="yoga for beginners">
+            <div class="blog-content">
+                <span>Wellness</span>
                 <h3>Yoga for Beginners</h3>
-                <span>Wellness</span>
-                <a href="#" class="read-more" onclick="showDetail(event, 'yoga')">Read More</a>
+                <p>Simple yoga routines to start your day right.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'yoga')">Read More</a>
                 <div class="detail-tip" id="yoga">
-                    <p>Yoga improves flexibility, reduces stress, and promotes mindfulness...</p>
+                    <p>Yoga improves flexibility, reduces stress, and promotes mindfulness.</p>
+                    <p>Start with 10-15 minutes daily and gradually increase.</p>
                 </div>
             </div>
         </div>
 
-        <div class="box blog-card" data-category="wellness">
-            <div class="box-img">
-                <img src="https://images.unsplash.com/photo-1540206395-68808572332f?w=500" alt="">
-            </div>
-            <div class="title-price blog-card-content">
+        <div class="blog-card" data-category="wellness">
+            <img src="https://tse4.mm.bing.net/th/id/OIP._rCAbEkWQrLxRH6oi2isqAHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Meditation Practices">
+            <div class="blog-content">
+                <span>Wellness</span>
                 <h3>Meditation Practices</h3>
-                <span>Wellness</span>
-                <a href="#" class="read-more" onclick="showDetail(event, 'meditation')">Read More</a>
+                <p>How to incorporate meditation into your daily life.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'meditation')">Read More</a>
                 <div class="detail-tip" id="meditation">
-                    <p>Daily meditation improves focus, reduces anxiety, and boosts emotional health...</p>
+                    <p>Daily meditation improves focus, reduces anxiety, and boosts emotional health.</p>
+                    <p>Try guided meditation apps or 5-10 minutes of silent focus each day.</p>
                 </div>
             </div>
         </div>
 
-        <div class="box blog-card" data-category="wellness">
-            <div class="box-img">
-                <img src="https://tse2.mm.bing.net/th/id/OIP.jj8m--DIRhQCf2raDO12BgHaE7?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="sleep hygiene">
-            </div>
-            <div class="title-price blog-card-content">
-                <h3>Sleep Hygiene Tips</h3>
+        <div class="blog-card" data-category="wellness">
+            <img src="https://tse1.explicit.bing.net/th/id/OIP.bXFsRQtIg-9g4xCXD1n8bAHaE-?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Sleep Hygiene Tips">
+            <div class="blog-content">
                 <span>Wellness</span>
-                <a href="#" class="read-more" onclick="showDetail(event, 'sleep')">Read More</a>
+                <h3>Sleep Hygiene Tips</h3>
+                <p>Improve your sleep quality naturally.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'sleep')">Read More</a>
                 <div class="detail-tip" id="sleep">
-                    <p>Maintain a consistent sleep schedule, reduce screen time, and create a relaxing bedtime routine...</p>
+                    <p>Maintain a consistent sleep schedule, reduce screen time, and create a relaxing bedtime routine.</p>
+                    <p>Avoid caffeine and heavy meals before bedtime for better sleep.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-card" data-category="wellness">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.iBvkmg6E-mfkLbLfSZO9cgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mindfulness Exercises">
+            <div class="blog-content">
+                <span>Wellness</span>
+                <h3>Mindfulness Exercises</h3>
+                <p>Simple practices to stay present and reduce stress.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'mindfulness')">Read More</a>
+                <div class="detail-tip" id="mindfulness">
+                    <p>Take short breaks, focus on your breath, and observe thoughts without judgment.</p>
+                    <p>Practice daily to improve emotional well-being and concentration.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-card" data-category="wellness">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.q77d3BQoT7UDCmD9OHd_RwHaEV?w=1024&h=600&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Walking for Health">
+            <div class="blog-content">
+                <span>Wellness</span>
+                <h3>Walking for Health</h3>
+                <p>Benefits of daily walks for body and mind.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'walking')">Read More</a>
+                <div class="detail-tip" id="walking">
+                    <p>Walking daily improves circulation, reduces stress, and strengthens muscles.</p>
+                    <p>Even 20-30 minutes can make a significant difference.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-card" data-category="wellness">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.19Iot4uuN8VqCYkIg5X9mAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Healthy Routine Tips">
+            <div class="blog-content">
+                <span>Wellness</span>
+                <h3>Healthy Routine Tips</h3>
+                <p>How to build a balanced and healthy daily routine.</p>
+                <a class="read-more" onclick="toggleDetail(this, 'routine')">Read More</a>
+                <div class="detail-tip" id="routine">
+                    <p>Set consistent sleep, meal, and exercise times. Include relaxation periods to maintain balance.</p>
+                    <p>Planning ahead reduces stress and improves productivity.</p>
                 </div>
             </div>
         </div>
 
     </div>
-</section>
-
-<!-- SUBSCRIPTION SECTION -->
-<section class="newsletter" id="subscribe">
-    <h2>Subscribe To Daily Tips</h2>
-    <div class="news-box">
-        <input type="email" id="subscriberEmail" placeholder="Enter Your Email...">
-        <a href="#" class="btn" onclick="subscribe(event)">Subscribe</a>
-        <p id="subscriptionMessage"></p>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <div class="footer-box">
-        <h2>Smart <span>Pharma</span></h2>
-        <p>Your trusted source for health & wellness tips and pharmacy insights.</p>
-        <div class="social">
-            <a href="#"><i class='bx bxl-facebook'></i></a>
-            <a href="#"><i class='bx bxl-twitter'></i></a>
-            <a href="#"><i class='bx bxl-instagram'></i></a>
-       </div>
-    </div>
-    <div class="copyright">
-        <p>&#169; 2024 Smart Pharma. All Rights Reserved.</p>
-        
-    </div>
-</footer>
-
-<script src="scriptss.js"></script>
+</div>
+    <script src="blog.js"></script>
 </body>
-</html>
+</html> => 
+
