@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/022/006/829/large_2x/pharmacology-and-pharmaceuticals-healthcare-background-with-copy-space-generative-ai-illustration-photo.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.title {
+  color: #000;
+  margin-bottom: 20px;
+}
+
+
+.registration_box {
+  width: 90%;
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 20px;
+  border: 2px solid rgba(255,255,255,.4);
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+
+.input_box {
+  position: relative;
+  border-bottom: 2px solid #000;
+}
+
+
+.input_box label {
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #000;
+  pointer-events: none;
+  transition: 0.4s ease;
+}
+
+
+.input_box .icon {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3em;
+  color: #000;
+  transition: 0.4s ease;
+}
+
+
+.input_box input {
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding-left: 35px;
+}
+
+
+.input_box:focus-within label {
+  top: -5px;
+  font-size: 0.85em;
+}
+
+.input_box:focus-within .icon {
+  top: -10px;
+  font-size: 1.2em;
+}
+
+
+.button-group {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+
+.reseat,
+.registor {
+  width: 160px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: skyblue;
+}
+
+.reseat:hover,
+.registor:hover {
+  background-color: slateblue;
+  font-weight: bold;
+  color: #000;
+}
+.terms-area {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.terms-area label {
+  cursor: pointer;
+}
+
+.terms-area input[type="checkbox"] {
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.terms-area a {
+  color: #1a237e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.terms-area a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

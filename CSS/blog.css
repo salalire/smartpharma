@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    url("https://static.vecteezy.com/system/resources/previews/022/006/829/large_2x/pharmacology-and-pharmaceuticals-healthcare-background-with-copy-space-generative-ai-illustration-photo.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #123249;
+}
+
+/* BACK TO HOME BUTTON */
+.back-home {
+  margin-top: 90px;
+  padding: 20px 6%;
+}
+
+.home-btn {
+  text-decoration: none;
+  background: #15808d; 
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.home-btn:hover {
+  background: #123249; /* darker hover color */
+}
+
+/* CATEGORY FILTERS */
+.search-section {
+  padding: 20px 6%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; 
+  justify-content: center;
+  
+}
+
+
+.filter-btn {
+  padding: 10px 25px;          
+  border-radius: 25px;          
+  border: 1px solid #15808d;    
+  background: #ffffff;           
+  color: #15808d;                
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08); 
+}
+
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #15808d; 
+  color: white;
+  border: 1px solid #15808d;
+  transform: scale(1.05); 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+
+/* BLOG GRID */
+.blog-container {
+  padding: 40px 6%;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* BLOG CARD */
+.blog-card {
+  background: #ffffff; 
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.blog-content {
+  position: relative;
+  z-index: 2;
+  padding: 16px;
+}
+
+.blog-content span {
+  font-size: 0.85rem;
+  color: #15808d; /* match button color */
+  font-weight: 500;
+}
+
+.blog-content h3 {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  color: #061222; /* strong heading color */
+}
+
+.blog-content p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 8px;
+  color: #15808d; 
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.detail-tip {
+  display: none;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .search-section {
+    justify-content: center;
+  }
+}

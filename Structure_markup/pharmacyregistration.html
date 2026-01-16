@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartPharma Registration</title>
+  <link rel="stylesheet" href="../CSS/pharmacyregistration.css">
+  <link rel="stylesheet" href="../CSS/component/navbar.css">
+  <link rel="stylesheet" href="../CSS/component/footer.css">
+<body>
+<div id="navbar-placeholder"></div>
+<section>
+  <div class="form-container">
+    <h2>SmartPharma Pharmacy Registration</h2>
+    <p id="Welcome_text">Register your pharmacy to access SmartPharma services.</p>
+    <p id="fill_text">All fields marked with * are required.</p>
+
+    <form onsubmit="return submitcase()">
+
+      <div class="section-title">Pharmacy Information</div>
+      <div class="form-grid">
+        <div>
+          <label>* Pharmacy Name </label>
+          <input type="text" name="pharmacy_name" required>
+        </div>
+      </div>
+
+      <div class="section-title">Owner Information</div>
+      <div class="form-grid">
+        <div>
+          <label>* First Name </label>
+          <input type="text" name="first_name" required>
+        </div>
+        <div>
+          <label>* Middle Name</label>
+          <input type="text" name="Middle_name" required>
+        </div>
+        <div>
+          <label>* Last Name </label>
+          <input type="text" name="Last_name" required>
+        </div>
+        <div>
+          <label>* TIN Number </label>
+          <input type="number" name="Tin_number" required>
+        </div>
+        <div>
+          <label>Phone Number </label>
+          <input type="tel" name="tel_number" >
+        </div>
+        <div>
+          <label>* Email Address </label>
+          <input type="email" id="email" name="Email_address" required>
+        </div>
+      </div>
+
+      <div class="section-title">Address</div>
+      <div class="form-grid">
+        <div>
+          <label>* Region </label>
+          <select id="region" name="region" required>
+            <option value="">Select Region</option>
+            <option value="Addis Ababa">Addis Ababa</option>
+            <option>Afar</option>
+            <option>Amhara</option>
+            <option>Benishangul-Gumuz</option>
+            <option>Dire Dawa</option>
+            <option>Gambela</option>
+            <option>Harari</option>
+            <option>Oromia</option>
+            <option>Sidama</option>
+            <option>Somali</option>
+            <option>South West Ethiopia</option>
+            <option>Southern Nations, Nationalities and Peoples</option>
+            <option>Tigray</option>
+          </select>
+        </div>
+
+        <div id="addis-subcity" class="hidden">
+          <label>Sub City *</label>
+          <select name="sub_city">
+            <option value="">Select Sub City</option>
+            <option>Addis Ketema</option>
+            <option>Akaki Kality</option>
+            <option>Arada</option>
+            <option>Bole</option>
+            <option>Gullele</option>
+            <option>Kirkos</option>
+            <option>Kolfe Keranio</option>
+            <option>Lideta</option>
+            <option>Nifas Silk-Lafto</option>
+            <option>Yeka</option>
+          </select>
+        </div>
+
+        <div id="other-city">
+          <label>* City / Town </label>
+          <input type="text" name="other_city">
+        </div>
+
+        <div>
+          <label>Woreda </label>
+          <input type="text" name="woreda" >
+        </div>
+      </div>
+
+     <div class="section-title">Security</div>
+      <div class="form-grid">
+        <div>
+          <label>* Password</label>
+          <input type="password" id="password" required>
+          <small id="Error_message" style="color:red;"></small>
+        </div>
+
+        <div>
+          <label>* Confirm Password</label>
+          <input type="password" id="confirm_password" required>
+          <small id="output_message" style="color:red;"></small>
+        </div>
+      </div>
+
+     
+
+      <div class="section-title">* License</div>
+      <input type="file" name="image" accept="image/*" required>
+
+      <div class="terms-area">
+  <label>
+    <input type="checkbox" id="service-agrement" name="terms" required>
+    I agree to the
+    <a href="pharmacyterms.html" target="_blank">Terms & Agreement</a>
+  </label>
+</div>
+
+
+      <div class="button-group">
+        <button type="reset">Cancel</button>
+        <button type="submit">Register</button>
+      </div>
+
+    </form>
+  </div>
+</section>
+<div id="footer-placeholder"></div>
+<script src="../js/layout.js"></script>
+<script src="../js/pharmacyregistration.js"></script>
+</body>
+</html>
