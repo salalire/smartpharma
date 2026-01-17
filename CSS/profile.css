@@ -1,0 +1,25 @@
+body {
+  font-family: Poppins, sans-serif;
+  background: #f4f6f8;
+  padding: 40px;
+}
+.profile-box {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+p {
+  margin: 8px 0;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #1fa2b1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

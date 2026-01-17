@@ -1,129 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MediCare Online</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediCare Online</title>
 
-  <!-- Font Awesome Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../CSS/home.css">
-  <link rel="stylesheet" href="../CSS/component/navbar.css">
-  <link rel="stylesheet" href="../CSS/component/footer.css">
-</head>
-<body>
-<div id="navbar-placeholder"></div>
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>Your Health, Elevated</h1>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/home.css" />
+    <link rel="stylesheet" href="../CSS/component/navbar.css" />
+    <link rel="stylesheet" href="../CSS/component/footer.css" />
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h1>Your Health, Elevated</h1>
 
-    <div class="search-box">
-      <input type="text" placeholder="Search">
-      <button><i class="fas fa-search"></i></button>
-    </div>
-
-    <div class="features">
-      <div class="feature">
-        <i class="fas fa-prescription"></i>
-        <p>Prescription</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-pills"></i>
-        <p>OTC Medicines</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-heartbeat"></i>
-        <p>Health Care</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-baby"></i>
-        <p>Baby Care</p>
-      </div>
-    </div>
-    <div class="hero-cta">
-  <a href="medication.html" class="glass-btn">Shop Now</a>
-  <a href="Blog.html" class="glass-btn">Learn More</a>
-</div>
-
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section class="why-us">
-    <h2>Why You Should Choose Us</h2>
-
-    <div class="why-cards">
-      <div class="why-card">
-        <i class="fas fa-user-md"></i>
-        <h3>Trusted Professionals</h3>
-        <p>We connect you with certified healthcare professionals you can trust.</p>
+      <div class="search-box">
+        <input type="text" id="home-search-input" placeholder="Search" />
+        <button id="home-search-btn"><i class="fas fa-search"></i></button>
       </div>
 
-      <div class="why-card">
-        <i class="fas fa-clock"></i>
-        <h3>24/7 Availability</h3>
-        <p>Access medicines and healthcare services anytime, anywhere.</p>
+      <div class="features">
+        <div class="feature">
+          <i class="fas fa-prescription"></i>
+          <p>Prescription</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-pills"></i>
+          <p>OTC Medicines</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-heartbeat"></i>
+          <p>Health Care</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-baby"></i>
+          <p>Baby Care</p>
+        </div>
       </div>
-
-      <div class="why-card">
-        <i class="fas fa-shield-alt"></i>
-        <h3>Secure & Reliable</h3>
-        <p>Your data and transactions are protected with top-level security.</p>
+      <div class="hero-cta">
+        <a href="medication.html" class="glass-btn">Shop Now</a>
+        <a href="Blog.html" class="glass-btn">Learn More</a>
       </div>
-    </div>
-  </section>
-  <!-- transition section-->
-   <section class="blog-transition">
-  <div class="container">
-    <div class="blog-image">
-      <img src="https://static.vecteezy.com/system/resources/previews/022/006/829/large_2x/pharmacology-and-pharmaceuticals-healthcare-background-with-copy-space-generative-ai-illustration-photo.jpeg">
-    </div>
-    <div class="blog-content">
-      <h2>Explore Health Insights</h2>
-      <p>Read our latest articles, tips, and guides to stay informed about your health and wellness.</p>
-      <a href="Blog.html" class="blog-btn">Visit Health Blog</a>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- WHY CHOOSE US -->
+    <section class="why-us">
+      <h2>Why You Should Choose Us</h2>
 
-  <!-- catagories-->
-   <section class="categories">
-  <h2>Shop by Category</h2>
+      <div class="why-cards">
+        <div class="why-card">
+          <i class="fas fa-user-md"></i>
+          <h3>Trusted Professionals</h3>
+          <p>
+            We connect you with certified healthcare professionals you can
+            trust.
+          </p>
+        </div>
 
-  <div class="category-grid">
-    <div class="category-card">
-      <i class="fas fa-file-medical"></i>
-      <h3>Prescription</h3>
-      <p>Upload your prescription and get genuine medicines delivered safely.</p>
-      <a href="medication.html" class="shop-btn">Shop Now</a>
-    </div>
+        <div class="why-card">
+          <i class="fas fa-clock"></i>
+          <h3>24/7 Availability</h3>
+          <p>Access medicines and healthcare services anytime, anywhere.</p>
+        </div>
 
-    <div class="category-card">
-      <i class="fas fa-capsules"></i>
-      <h3>OTC Medicines</h3>
-      <p>Buy everyday medicines, supplements, and wellness products easily.</p>
-      <a href="medication.html" class="shop-btn">Shop Now</a>
-    </div>
+        <div class="why-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Secure & Reliable</h3>
+          <p>
+            Your data and transactions are protected with top-level security.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- transition section-->
+    <section class="blog-transition">
+      <div class="container">
+        <div class="blog-image">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/022/006/829/large_2x/pharmacology-and-pharmaceuticals-healthcare-background-with-copy-space-generative-ai-illustration-photo.jpeg"
+          />
+        </div>
+        <div class="blog-content">
+          <h2>Explore Health Insights</h2>
+          <p>
+            Read our latest articles, tips, and guides to stay informed about
+            your health and wellness.
+          </p>
+          <a href="Blog.html" class="blog-btn">Visit Health Blog</a>
+        </div>
+      </div>
+    </section>
 
-    <div class="category-card">
-      <i class="fas fa-notes-medical"></i>
-      <h3>Health Care</h3>
-      <p>Explore health devices, personal care, and medical essentials.</p>
-      <a href="medication.html" class="shop-btn">Shop Now</a>
-    </div>
-    <div class="category-card">
-      <i class="fas fa-spa"></i>
-      <h3>Skin Care</h3>
-      <p>Discover skincare products for a healthy and glowing skin.</p>
-      <a href="medication.html" class="shop-btn">Shop Now</a>
-    </div>
-  </div>
-</section>
+    <!-- catagories-->
+    <section class="categories">
+      <h2>Shop by Category</h2>
 
-<div id="footer-placeholder"></div>
-<script src="../js/layout.js"></script>
+      <div class="category-grid">
+        <div class="category-card">
+          <i class="fas fa-file-medical"></i>
+          <h3>Prescription</h3>
+          <p>
+            Upload your prescription and get genuine medicines delivered safely.
+          </p>
+          <a href="medication.html" class="shop-btn">Shop Now</a>
+        </div>
 
-</body>
+        <div class="category-card">
+          <i class="fas fa-capsules"></i>
+          <h3>OTC Medicines</h3>
+          <p>
+            Buy everyday medicines, supplements, and wellness products easily.
+          </p>
+          <a href="medication.html" class="shop-btn">Shop Now</a>
+        </div>
+
+        <div class="category-card">
+          <i class="fas fa-notes-medical"></i>
+          <h3>Health Care</h3>
+          <p>Explore health devices, personal care, and medical essentials.</p>
+          <a href="medication.html" class="shop-btn">Shop Now</a>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-spa"></i>
+          <h3>Skin Care</h3>
+          <p>Discover skincare products for a healthy and glowing skin.</p>
+          <a href="medication.html" class="shop-btn">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="../js/layout.js"></script>
+    <script src="../js/home.js"></script>
+  </body>
 </html>

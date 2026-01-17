@@ -13,19 +13,33 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 // ===============================
 // SEARCH FUNCTIONALITY
 // ===============================
-searchInput.addEventListener("keyup", () => {
-  const searchValue = searchInput.value.toLowerCase();
-
-  productCards.forEach(card => {
+function filterProducts(searchValue) {
+  searchValue = searchValue.toLowerCase();
+  productCards.forEach((card) => {
     const productName = card.querySelector("h3").textContent.toLowerCase();
     card.style.display = productName.includes(searchValue) ? "flex" : "none";
   });
+}
+
+searchInput.addEventListener("keyup", () => {
+  filterProducts(searchInput.value);
+});
+
+// Check for search parameter in URL
+window.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchQuery = urlParams.get("search");
+
+  if (searchQuery) {
+    searchInput.value = searchQuery;
+    filterProducts(searchQuery);
+  }
 });
 
 // ===============================
 // ADD TO CART FUNCTIONALITY
 // ===============================
-addToCartButtons.forEach(button => {
+addToCartButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const card = button.parentElement;
 
@@ -33,12 +47,11 @@ addToCartButtons.forEach(button => {
       name: card.querySelector("h3").textContent,
       price: card.querySelector(".price").textContent,
       image: card.querySelector("img").src,
-      quantity: 1
+      quantity: 1,
     };
 
     addToCart(product);
     showAddToCartMessage(product.name);
-
   });
 });
 
@@ -46,7 +59,7 @@ addToCartButtons.forEach(button => {
 // CART LOGIC
 // ===============================
 function addToCart(product) {
-  const existingProduct = cart.find(item => item.name === product.name);
+  const existingProduct = cart.find((item) => item.name === product.name);
 
   if (existingProduct) {
     existingProduct.quantity++;
@@ -82,7 +95,21 @@ function updateCartCount() {
   }
 }
 
+// Use MutationObserver to wait for the navbar to be injected
+const observer = new MutationObserver((mutations, obs) => {
+  const cartBadge = document.querySelector(".cart-count");
+  if (cartBadge) {
+    updateCartCount();
+    obs.disconnect(); // Stop observing once found
+  }
+});
 
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+});
+
+// Also call it immediately in case it's already there
 updateCartCount();
 
 // ===============================
@@ -90,12 +117,9 @@ updateCartCount();
 // ===============================
 
 // Medicines requiring prescription
-const prescriptionMedicines = [
-  "Insulin Injection",
-  "Antibiotic Syrup"
-];
+const prescriptionMedicines = ["Insulin Injection", "Antibiotic Syrup"];
 
-addToCartButtons.forEach(button => {
+addToCartButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const productName = button.parentElement.querySelector("h3").textContent;
 
@@ -116,4 +140,3 @@ function showAddToCartMessage(name) {
     message.remove();
   }, 2000);
 }
-

@@ -1,80 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Profile</title>
-  <style>
-    body {
-      font-family: Poppins, sans-serif;
-      background: #f4f6f8;
-      padding: 40px;
-    }
-    .profile-box {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    p { margin: 8px 0; }
-    button {
-      margin-top: 20px;
-      padding: 10px 15px;
-      background: #1fa2b1;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-
-<div class="profile-box">
-  <h2 id="title"></h2>
-  <p><strong>Name:</strong> <span id="name"></span></p>
-  <p><strong>Email:</strong> <span id="email"></span></p>
-  <p><strong>Phone:</strong> <span id="phone"></span></p>
-  <div id="extra"></div>
-  <button onclick="logout()">Logout</button>
-</div>
-
-<script>
-  const user = JSON.parse(localStorage.getItem("currentUser"));
-
-  if (!user) {
-    window.location.href = "login.html";
-  }
-
-  document.getElementById("title").textContent =
-    user.role === "pharmacy" ? "Pharmacy Profile" : "User Profile";
-
-  document.getElementById("name").textContent = user.username || user.pharmacyName || "";
-  document.getElementById("email").textContent = user.email;
-  document.getElementById("phone").textContent = user.phone || "";
-
-  if (user.role === "user") {
-    const div = document.getElementById("extra");
-    div.innerHTML = "<h3>Purchased Medicines</h3>";
-    if (!user.medicines || user.medicines.length === 0) {
-      div.innerHTML += "<p>No medicines purchased yet.</p>";
-    } else {
-      const ul = document.createElement("ul");
-      user.medicines.forEach(m => {
-        const li = document.createElement("li");
-        li.textContent = m;
-        ul.appendChild(li);
-      });
-      div.appendChild(ul);
-    }
-  }
-
-  function logout() {
-    localStorage.removeItem("currentUser");
-    window.location.href = "login.html";
-  }
-</script>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="../CSS/profile.css" />
+    <link rel="sctip" href="../js/" />
+  </head>
+  <body>
+    <div class="profile-box">
+      <h2 id="title"></h2>
+      <p><strong>Name:</strong> <span id="name"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Phone:</strong> <span id="phone"></span></p>
+      <div id="extra"></div>
+      <button onclick="logout()">Logout</button>
+    </div>
+    <script src="../js/profile.js"></script>
+  </body>
 </html>
