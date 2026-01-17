@@ -6,32 +6,29 @@
 section {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url('https://static.vecteezy.com/system/resources/previews/022/006/829/large_2x/pharmacology-and-pharmaceuticals-healthcare-background-with-copy-space-generative-ai-illustration-photo.jpeg');
+  background-image: url("https://static.vecteezy.com/system/resources/previews/022/006/829/large_2x/pharmacology-and-pharmaceuticals-healthcare-background-with-copy-space-generative-ai-illustration-photo.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-
 
 .title {
   color: #000;
   margin-bottom: 20px;
 }
 
-
 .registration_box {
   width: 90%;
   max-width: 900px;
   padding: 40px;
   border-radius: 20px;
-  border: 2px solid rgba(255,255,255,.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(15px);
   background: rgba(255, 255, 255, 0.75);
 }
-
 
 .form-grid {
   display: grid;
@@ -39,12 +36,10 @@ section {
   gap: 25px;
 }
 
-
 .input_box {
   position: relative;
   border-bottom: 2px solid #000;
 }
-
 
 .input_box label {
   position: absolute;
@@ -57,7 +52,6 @@ section {
   transition: 0.4s ease;
 }
 
-
 .input_box .icon {
   position: absolute;
   left: 5px;
@@ -67,7 +61,6 @@ section {
   color: #000;
   transition: 0.4s ease;
 }
-
 
 .input_box input {
   width: 100%;
@@ -79,7 +72,6 @@ section {
   padding-left: 35px;
 }
 
-
 .input_box:focus-within label {
   top: -5px;
   font-size: 0.85em;
@@ -90,7 +82,6 @@ section {
   font-size: 1.2em;
 }
 
-
 .button-group {
   grid-column: 1 / -1;
   display: flex;
@@ -98,7 +89,6 @@ section {
   gap: 40px;
   margin-top: 30px;
 }
-
 
 .reseat,
 .registor {
@@ -113,9 +103,9 @@ section {
 
 .reseat:hover,
 .registor:hover {
-  background-color:  rgb(98, 189, 250);
+  background-color: rgb(98, 189, 250);
   font-weight: bold;
-  color: white ;
+  color: white;
 }
 .terms-area {
   grid-column: 1 / -1;
@@ -141,7 +131,6 @@ section {
 .terms-area a:hover {
   text-decoration: underline;
 }
-
 
 @media (max-width: 600px) {
   .button-group {
