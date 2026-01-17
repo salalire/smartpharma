@@ -1,4 +1,4 @@
-const regionSelect = document.getElementById("region");6
+const regionSelect = document.getElementById("region");
 const addisSubcity = document.getElementById("addis-subcity");
 const otherCity = document.getElementById("other-city");
 
