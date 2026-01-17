@@ -1,4 +1,4 @@
-// Wrap everything to run after the DOM is loaded
+// Wrap everything to run after the DOM is loaded6
 document.addEventListener("DOMContentLoaded", function() {
 
     // -----------------------------
