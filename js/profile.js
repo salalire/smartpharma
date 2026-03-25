@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const API_URL = "http://localhost/smartpharma-backend-with-php/api";
+  const API_URL = "http://localhost/smartpharma-backend-with_php/api";
 
   // Try to get fresh data from backend
   fetch(`${API_URL}/users/get_profile.php?id=${localUser.id}`)
