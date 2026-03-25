@@ -95,7 +95,7 @@ function storePharmacyData() {
     password: document.getElementById("password").value,
     role: "owner"
   };
-  const API_URL = "http://localhost/smartpharma-backend-with-php/api";
+  const API_URL = "http://localhost/smartpharma-backend-with_php/api";
 
   fetch(`${API_URL}/authentication/register.php`, {
     method: "POST",
