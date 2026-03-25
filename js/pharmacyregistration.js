@@ -92,12 +92,27 @@ document.addEventListener("DOMContentLoaded", () => {
 function storePharmacyData() {
   const pharmacyData = {
     email: document.getElementById("email").value,
-    password: document.getElementById("password").value
+    password: document.getElementById("password").value,
+    role: "owner"
   };
+  const API_URL = "http://localhost/smartpharma-backend-with-php/api";
 
-  let pharmacies = JSON.parse(localStorage.getItem("pharmacies")) || [];
-  pharmacies.push(pharmacyData);
-  localStorage.setItem("pharmacies", JSON.stringify(pharmacies));
+  fetch(`${API_URL}/authentication/register.php`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(pharmacyData)
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert("Pharmacy registered successfully!");
+    } else {
+      alert(data.message || "Registration failed");
+    }
+  })
+  .catch(err => console.error(err));
 }
 
 
