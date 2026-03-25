@@ -4,7 +4,49 @@
 
 // Get elements
 const searchInput = document.querySelector(".search-box input");
-const productCards = document.querySelectorAll(".product-card");
+const API_URL = "http://localhost/smartpharma-backend-with-php/api";
+let products = [];
+
+fetch(`${API_URL}/products/get_products.php`)
+  .then(res => res.json())
+  .then(data => {
+    products = data;
+    renderProducts(products);
+  })
+  .catch(err => console.error(err));
+
+  function renderProducts(products) {
+  const container = document.querySelector(".products-container");
+  container.innerHTML = "";
+
+  products.forEach(product => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+
+    card.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p class="price">${product.price}</p>
+      <button class="shop-btn">Add to Cart</button>
+    `;
+
+    const button = card.querySelector(".shop-btn");
+
+    button.addEventListener("click", () => {
+      addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity: 1
+      });
+
+      showAddToCartMessage(product.name);
+    });
+
+    container.appendChild(card);
+  });
+}
 const addToCartButtons = document.querySelectorAll(".shop-btn");
 
 // CART DATA
@@ -15,10 +57,12 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 // ===============================
 function filterProducts(searchValue) {
   searchValue = searchValue.toLowerCase();
-  productCards.forEach((card) => {
-    const productName = card.querySelector("h3").textContent.toLowerCase();
-    card.style.display = productName.includes(searchValue) ? "flex" : "none";
-  });
+
+  const filtered = products.filter(p =>
+    p.name.toLowerCase().includes(searchValue)
+  );
+
+  renderProducts(filtered);
 }
 
 searchInput.addEventListener("keyup", () => {
@@ -55,9 +99,10 @@ addToCartButtons.forEach((button) => {
   });
 });
 
-// ===============================
-// CART LOGIC
-// ===============================
+
+
+
+
 function addToCart(product) {
   const existingProduct = cart.find((item) => item.name === product.name);
 
