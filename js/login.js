@@ -7,17 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const pharmacies = JSON.parse(localStorage.getItem("pharmacies")) || [];
-
-    const userMatch = users.find(
-      u => u.email === email && u.password === password
-    );
-
-    const pharmacyMatch = pharmacies.find(
-      p => p.email === email && p.password === password
-    );
-
     let message = document.getElementById("login_message");
     if (!message) {
       message = document.createElement("p");
@@ -26,27 +15,41 @@ document.addEventListener("DOMContentLoaded", () => {
       message.style.marginTop = "10px";
       form.appendChild(message);
     }
+  const API_URL = "http://localhost/smartpharma-backend-with-php/api";
+    
+    fetch(`${API_URL}/authentication/login.php`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        // Save logged-in user
+        localStorage.setItem("currentUser", JSON.stringify(data.user));
 
-    if (userMatch || pharmacyMatch) {
-      const account = userMatch
-        ? { ...userMatch, role: "user" }
-        : { ...pharmacyMatch, role: "pharmacy" };
+        message.style.color = "green";
+        message.textContent = "Login successful";
 
-      localStorage.setItem("currentUser", JSON.stringify(account));
+        setTimeout(() => {
+          // Optional: role-based redirect
+          if (data.user.role === "owner") {
+            window.location.href = "owner-dashboard.html";
+          } else {
+            window.location.href = "Home.html";
+          }
+        }, 1000);
 
-      message.style.color = "green";
-      message.textContent = "Login successful";
-
-      setTimeout(() => {
-        window.location.href = "Home.html";
-      }, 1000);
-    } else {
-      message.style.color = "red";
-      message.textContent = "User does not exist or incorrect password";
-
-      setTimeout(() => {
-        message.textContent = "";
-      }, 3000);
-    }
+      } else {
+        message.style.color = "red";
+        message.textContent = data.message || "Invalid credentials";
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      message.textContent = "Server error";
+    });
   });
 });
