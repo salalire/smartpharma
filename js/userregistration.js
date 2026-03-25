@@ -100,7 +100,7 @@ function storeUserData() {
     username: getInput("username").value,
     password: getInput("password").value
   };
-   const API_URL = "http://localhost/smartpharma-backend-with-php/api";
+   const API_URL = "http://localhost/smartpharma-backend-with_php/api";
 
   fetch(`${API_URL}/authentication/register.php`, {
     method: "POST",
