@@ -98,14 +98,25 @@ function storeUserData() {
     email: getInput("useremail").value,
     phone: getInput("phone").value,
     username: getInput("username").value,
-    password: getInput("password").value,
-    medicines: []
+    password: getInput("password").value
   };
+   const API_URL = "http://localhost/smartpharma-backend-with-php/api";
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-  users.push(userData);
-  localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("currentUser", JSON.stringify(userData));
-
-  window.location.href = "Home.html";
+  fetch(`${API_URL}/authentication/register.php`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userData)
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert("Registration successful!");
+      window.location.href = "Home.html";
+    } else {
+      alert(data.message || "Registration failed");
+    }
+  })
+  .catch(err => console.error(err));
 }
