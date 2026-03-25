@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       message.style.marginTop = "10px";
       form.appendChild(message);
     }
-  const API_URL = "http://localhost/smartpharma-backend-with-php/api";
+  const API_URL = "http://localhost/smartpharma-backend-with_php/api";
     
     fetch(`${API_URL}/authentication/login.php`, {
       method: "POST",
