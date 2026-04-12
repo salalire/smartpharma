@@ -14,7 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      const user = JSON.parse(localStorage.getItem("currentUser"));
+      let user = null;
+
+try {
+  const stored = localStorage.getItem("currentUser");
+  user = stored ? JSON.parse(stored) : null;
+} catch (e) {
+  console.error("Invalid JSON in localStorage");
+  user = null;
+}
       const signInBtn = navLinks.querySelector('a.btn');
       const signUpDropdown = navLinks.querySelector('.signup-dropdown');
 

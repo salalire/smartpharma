@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isPasswordMatch && isStrongPassword) {
       storeUserData();
-      alert("Registration successful!");
       form.reset();
       clearMessages();
     }
@@ -92,31 +91,37 @@ function char_check() {
   }
 }
 
-function storeUserData() {
+async function storeUserData() {
   const userData = {
-    role: "user",
+    username: getInput("username").value,
     email: getInput("useremail").value,
     phone: getInput("phone").value,
-    username: getInput("username").value,
     password: getInput("password").value
   };
-   const API_URL = "http://localhost/smartpharma-backend-with_php/api";
 
-  fetch(`${API_URL}/authentication/register.php`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(userData)
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.success) {
+  const API_URL = "http://localhost/smartpharma-backend/smartpharma-backend-with_php/api";
+
+  try {
+    const res = await fetch(`${API_URL}/authentication/register.php`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "include", // 🔥 important
+      body: JSON.stringify(userData)
+    });
+
+    const data = await res.json();
+
+    if (data.status === "success") {
       alert("Registration successful!");
-      window.location.href = "Home.html";
+      window.location.href = "login.html"; // better UX
     } else {
       alert(data.message || "Registration failed");
     }
-  })
-  .catch(err => console.error(err));
+
+  } catch (err) {
+    console.error("Registration error:", err);
+    alert("Server error");
+  }
 }
