@@ -101,27 +101,53 @@ async function storeUserData() {
 
   const API_URL = "http://localhost/smartpharma-backend/smartpharma-backend-with_php/api";
 
+  // Create / reuse message element
+  let message = document.getElementById("register_message");
+  if (!message) {
+    message = document.createElement("p");
+    message.id = "register_message";
+    message.style.marginTop = "10px";
+    message.style.fontSize = "14px";
+    document.querySelector("form").appendChild(message);
+  }
+
   try {
     const res = await fetch(`${API_URL}/authentication/register.php`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      credentials: "include", // 🔥 important
+      credentials: "include",
       body: JSON.stringify(userData)
     });
 
     const data = await res.json();
 
     if (data.status === "success") {
-      alert("Registration successful!");
-      window.location.href = "login.html"; // better UX
+      message.style.color = "green";
+      message.textContent = "Registration successful";
+
+    
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 1000);
+
     } else {
-      alert(data.message || "Registration failed");
+      message.style.color = "red";
+      message.textContent = data.message || "Registration failed";
+
+      setTimeout(() => {
+        message.textContent = "";
+      }, 3000);
     }
 
   } catch (err) {
-    console.error("Registration error:", err);
-    alert("Server error");
+   
+    message.style.color = "red";
+    message.textContent = "Server error. Please try again later.";
+
+    setTimeout(() => {
+      message.textContent = "";
+    }, 3000);
   }
 }

@@ -1,20 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Profile</title>
-    <link rel="stylesheet" href="../CSS/profile.css" />
-    <link rel="sctip" href="../js/" />
-  </head>
-  <body>
-    <div class="profile-box">
-      <h2 id="title"></h2>
-      <p><strong>Name:</strong> <span id="name"></span></p>
-      <p><strong>Email:</strong> <span id="email"></span></p>
-      <p><strong>Phone:</strong> <span id="phone"></span></p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile</title>
+
+  <link rel="stylesheet" href="../CSS/profile.css" />
+</head>
+
+<body>
+  <div class="profile-container">
+
+    <div class="profile-card">
+      <h2 id="title">Profile</h2>
+
+      <div class="profile-info">
+        <p><strong>Name:</strong> <span id="name">-</span></p>
+        <p><strong>Email:</strong> <span id="email">-</span></p>
+        <p><strong>Phone:</strong> <span id="phone">-</span></p>
+      </div>
+
+      
+      <div id="owner-status" class="status-box"></div>
+
+      
       <div id="extra"></div>
-      <button onclick="logout()">Logout</button>
+
+      <div class="profile-actions">
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
     </div>
-    <script src="../js/profile.js"></script>
-  </body>
+
+  </div>
+
+  <script src="../js/profile.js"></script>
+</body>
 </html>

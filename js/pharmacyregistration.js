@@ -82,37 +82,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (submitcase()) {
       storePharmacyData();
-      alert("Pharmacy registration successful!");
       form.reset();
     }
   });
 });
 
 
-function storePharmacyData() {
-  const pharmacyData = {
-    email: document.getElementById("email").value,
-    password: document.getElementById("password").value,
-    role: "owner"
-  };
-  const API_URL = "http://localhost/smartpharma-backend-with_php/api";
+async function storePharmacyData() {
+  const API_URL = "http://localhost/smartpharma-backend/smartpharma-backend-with_php/api";
 
-  fetch(`${API_URL}/authentication/register.php`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(pharmacyData)
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.success) {
-      alert("Pharmacy registered successfully!");
+  let message = document.getElementById("pharmacy_message");
+  if (!message) {
+    message = document.createElement("p");
+    message.id = "pharmacy_message";
+    message.style.marginTop = "10px";
+    document.querySelector("form").appendChild(message);
+  }
+
+  try {
+    const res = await fetch(`${API_URL}/authentication/register.php`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        username: document.querySelector('input[name="first_name"]').value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value
+      })
+    });
+
+    const data = await res.json();
+
+    if (data.status === "success") {
+      message.style.color = "green";
+      message.textContent = "Account created. Please login to continue.";
+
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 1500);
+
     } else {
-      alert(data.message || "Registration failed");
+      message.style.color = "red";
+      message.textContent = data.message || "Registration failed";
     }
-  })
-  .catch(err => console.error(err));
+
+  } catch (err) {
+    message.style.color = "red";
+    message.textContent = "Server error. Please try again.";
+  }
 }
 
 
