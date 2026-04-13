@@ -4,7 +4,7 @@
 
 // Get elements
 const searchInput = document.querySelector(".search-box input");
-const API_URL = "http://localhost/smartpharma-backend-with_php/api";
+const API_URL = "http://localhost/sp/smartpharma-backend/smartpharma-backend-with_php/api";
 let products = [];
 
 fetch(`${API_URL}/products/get_products.php`)

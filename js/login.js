@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       form.appendChild(message);
     }
 
-    const API_URL = "http://localhost/smartpharma-backend/smartpharma-backend-with_php/api";
+    const API_URL = "http://localhost/sp/smartpharma-backend/smartpharma-backend-with_php/api";
 
     try {
       const res = await fetch(`${API_URL}/authentication/login.php`, {

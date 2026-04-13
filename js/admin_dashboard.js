@@ -1,16 +1,12 @@
+const API_URL = "http://localhost/sp/smartpharma-backend/smartpharma-backend-with_php/api";
 const user = getUser();
 
 if (!user || user.role !== "admin") {
   window.location.href = "login.html";
 }
 
-// Load applications
 async function loadApplications() {
-  const res = await fetch(
-    "http://localhost/smartpharma-backend/api/admin/get_applications.php",
-    { credentials: "include" }
-  );
-
+  const res = await fetch(`${API_URL}/admin/get_application.php`, { credentials: "include" });
   const data = await res.json();
 
   const table = document.getElementById("applications");
@@ -18,7 +14,6 @@ async function loadApplications() {
 
   data.data.forEach(app => {
     const row = document.createElement("tr");
-
     row.innerHTML = `
       <td>${app.pharmacy_name}</td>
       <td>${app.email}</td>
@@ -28,36 +23,27 @@ async function loadApplications() {
         <button onclick="reject(${app.id})">Reject</button>
       </td>
     `;
-
     table.appendChild(row);
   });
 }
 
 async function approve(id) {
-  await fetch(
-    "http://localhost/smartpharma-backend/api/admin/approve_owner.php",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({ application_id: id })
-    }
-  );
-
+  await fetch(`${API_URL}/admin/approve_owner.php`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    credentials: "include",
+    body: JSON.stringify({ application_id: id })
+  });
   loadApplications();
 }
 
 async function reject(id) {
-  await fetch(
-    "http://localhost/smartpharma-backend/api/admin/reject_owner.php",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({ application_id: id })
-    }
-  );
-
+  await fetch(`${API_URL}/admin/reject_owner.php`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    credentials: "include",
+    body: JSON.stringify({ application_id: id })
+  });
   loadApplications();
 }
 

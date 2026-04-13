@@ -99,7 +99,7 @@ async function storeUserData() {
     password: getInput("password").value
   };
 
-  const API_URL = "http://localhost/smartpharma-backend/smartpharma-backend-with_php/api";
+  const API_URL = "http://localhost/sp/smartpharma-backend/smartpharma-backend-with_php/api";
 
   // Create / reuse message element
   let message = document.getElementById("register_message");

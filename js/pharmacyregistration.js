@@ -66,72 +66,138 @@ function validate_password() {
   return true;
 }
 
-function submitcase() {
-  const validPassword = validate_password();
-  const matchPassword = check_password();
-  const agreed = validateAgrement();
-
-  return validPassword && matchPassword && agreed;
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
 
-  form.addEventListener("submit", function (event) {
+  form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    if (submitcase()) {
-      storePharmacyData();
-      form.reset();
-    }
+    const validPassword = validate_password();
+    const matchPassword = check_password();
+    const agreed = validateAgrement();
+
+    if (!validPassword || !matchPassword || !agreed) return;
+
+    const region = document.getElementById("region")?.value || "";
+
+    // Capture all field values BEFORE any reset
+    const formData = {
+      pharmacy_name: document.querySelector('[name="pharmacy_name"]')?.value || "",
+      first_name: document.querySelector('[name="first_name"]')?.value || "",
+      middle_name: document.querySelector('[name="Middle_name"]')?.value || "",
+      last_name: document.querySelector('[name="Last_name"]')?.value || "",
+      tin_number: document.querySelector('[name="Tin_number"]')?.value || "",
+      email: document.getElementById("email")?.value || "",
+      password: document.getElementById("password")?.value || "",
+      region: region,
+      city: region === "Addis Ababa"
+        ? "Addis Ababa"
+        : (document.querySelector('[name="other_city"]')?.value || ""),
+      sub_city: document.querySelector('[name="sub_city"]')?.value || null,
+      woreda: document.querySelector('[name="woreda"]')?.value || null
+    };
+
+    await storePharmacyData(formData);
   });
 });
 
 
-async function storePharmacyData() {
-  const API_URL = "http://localhost/smartpharma-backend/smartpharma-backend-with_php/api";
+async function storePharmacyData(formData) {
+  const API_URL = "http://localhost/sp/smartpharma-backend/smartpharma-backend-with_php/api";
 
   let message = document.getElementById("pharmacy_message");
   if (!message) {
     message = document.createElement("p");
     message.id = "pharmacy_message";
     message.style.marginTop = "10px";
+    message.style.fontSize = "14px";
     document.querySelector("form").appendChild(message);
   }
+  message.textContent = "";
 
   try {
-    const res = await fetch(`${API_URL}/authentication/register.php`, {
+    // STEP 1: Register account (only saves to users table)
+    const registerRes = await fetch(`${API_URL}/authentication/register.php`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       credentials: "include",
       body: JSON.stringify({
-        username: document.querySelector('input[name="first_name"]').value,
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value
+        username: formData.first_name,
+        email: formData.email,
+        password: formData.password
       })
     });
 
-    const data = await res.json();
+    const registerData = await registerRes.json();
 
-    if (data.status === "success") {
+    if (registerData.status !== "success") {
+      message.style.color = "red";
+      message.textContent = registerData.message || "Registration failed";
+      return;
+    }
+
+    // STEP 2: Auto-login to establish session
+    const loginRes = await fetch(`${API_URL}/authentication/login.php`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password
+      })
+    });
+
+    const loginData = await loginRes.json();
+
+    if (loginData.status !== "success") {
+      message.style.color = "red";
+      message.textContent = loginData.message || "Auto-login failed";
+      return;
+    }
+
+    // Save user to localStorage so profile page works
+    localStorage.setItem("currentUser", JSON.stringify(loginData.user));
+
+    // STEP 3: Submit pharmacy application (saves to pharmacy_profiles table)
+    const applyRes = await fetch(`${API_URL}/owner/apply.php`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password,
+        pharmacy_name: formData.pharmacy_name,
+        first_name: formData.first_name,
+        middle_name: formData.middle_name,
+        last_name: formData.last_name,
+        tin_number: formData.tin_number,
+        region: formData.region,
+        city: formData.city,
+        sub_city: formData.sub_city,
+        woreda: formData.woreda
+      })
+    });
+
+    const applyData = await applyRes.json();
+
+    if (applyData.status === "success") {
       message.style.color = "green";
-      message.textContent = "Account created. Please login to continue.";
+      message.textContent = "Application submitted! Waiting for admin approval.";
+
+      document.querySelector("form").reset();
 
       setTimeout(() => {
-        window.location.href = "login.html";
-      }, 1500);
+        window.location.href = "Home.html";
+      }, 2000);
 
     } else {
-      message.style.color = "red";
-      message.textContent = data.message || "Registration failed";
+      message.style.color = "orange";
+      message.textContent = "Account created, but application failed: " + applyData.message;
     }
 
   } catch (err) {
+    console.error("Registration error:", err);
     message.style.color = "red";
-    message.textContent = "Server error. Please try again.";
+    message.textContent = "Error: " + err.message;
   }
 }
-
-

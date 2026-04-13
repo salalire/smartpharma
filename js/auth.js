@@ -3,7 +3,7 @@ function getUser() {
 }
 
 function logout() {
-  fetch("http://localhost/smartpharma-backend-with_php/api/authentication/logout.php", {
+  fetch("http://localhost/sp/smartpharma-backend/smartpharma-backend-with_php/api/authentication/logout.php", {
     credentials: "include"
   }).then(() => {
     localStorage.removeItem("currentUser");
