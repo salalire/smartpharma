@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function storePharmacyData(formData) {
-  const API_URL = "http://localhost/sp/smartpharma-backend/smartpharma-backend-with_php/api";
+  const API_URL = "http://127.0.0.1/sp/smartpharma-backend/smartpharma-backend-with_php/api";
 
   let message = document.getElementById("pharmacy_message");
   if (!message) {
@@ -201,3 +201,4 @@ async function storePharmacyData(formData) {
     message.textContent = "Error: " + err.message;
   }
 }
+

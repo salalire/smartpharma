@@ -1,4 +1,4 @@
-const PANEL_API = "http://localhost/sp/smartpharma-backend/smartpharma-backend-with_php/api";
+const PANEL_API = "http://127.0.0.1/sp/smartpharma-backend/smartpharma-backend-with_php/api";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -311,3 +311,4 @@ function panelLogout() {
   fetch(`${PANEL_API}/authentication/logout.php`, { credentials: "include" });
   window.location.href = "../Structure_markup/login.html";
 }
+

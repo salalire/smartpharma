@@ -4,7 +4,7 @@
 
 // Get elements
 const searchInput = document.querySelector(".search-box input");
-const API_URL = "http://localhost/sp/smartpharma-backend/smartpharma-backend-with_php/api";
+const API_URL = "http://127.0.0.1/sp/smartpharma-backend/smartpharma-backend-with_php/api";
 let products = [];
 
 fetch(`${API_URL}/products/get_products.php`)
@@ -185,3 +185,4 @@ function showAddToCartMessage(name) {
     message.remove();
   }, 2000);
 }
+
